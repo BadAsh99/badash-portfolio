@@ -12,11 +12,16 @@ export function HeroSection() {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-4 pt-14 relative overflow-hidden">
-      {/* Subtle grid background */}
+      {/* Floating orbs */}
+      <div className="absolute rounded-full animate-float-slow pointer-events-none" style={{ top: "-8rem", left: "-8rem", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(0,102,255,0.35) 0%, transparent 70%)", filter: "blur(80px)", willChange: "transform" }} />
+      <div className="absolute rounded-full animate-float-medium pointer-events-none" style={{ bottom: "-10rem", right: "-5rem", width: "500px", height: "500px", background: "radial-gradient(circle, rgba(220,0,0,0.28) 0%, transparent 70%)", filter: "blur(80px)", willChange: "transform" }} />
+      <div className="absolute rounded-full animate-float-fast pointer-events-none" style={{ top: "33%", right: "25%", width: "320px", height: "320px", background: "radial-gradient(circle, rgba(0,80,255,0.18) 0%, transparent 70%)", filter: "blur(60px)", willChange: "transform" }} />
+
+      {/* Grid overlay */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.025]"
         style={{
-          backgroundImage: "linear-gradient(#00ff41 1px, transparent 1px), linear-gradient(90deg, #00ff41 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(#0080ff 1px, transparent 1px), linear-gradient(90deg, #0080ff 1px, transparent 1px)",
           backgroundSize: "50px 50px",
         }}
       />
@@ -36,7 +41,7 @@ export function HeroSection() {
             >
               <Link
                 href="/playground"
-                className="flex items-center gap-2 px-6 py-3 bg-terminal-green text-terminal-bg font-mono font-bold text-sm rounded hover:bg-terminal-green/90 transition-all shadow-glow-green group"
+                className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-mono font-bold text-sm rounded hover:bg-blue-500 transition-all shadow-glow-green group"
               >
                 <Shield size={16} />
                 Enter Playground
@@ -44,7 +49,7 @@ export function HeroSection() {
               </Link>
               <Link
                 href="/blog"
-                className="flex items-center gap-2 px-6 py-3 border border-terminal-border text-terminal-text font-mono text-sm rounded hover:border-terminal-green hover:text-terminal-green transition-all group"
+                className="flex items-center gap-2 px-6 py-3 glass-card text-terminal-text font-mono text-sm rounded hover:text-terminal-green transition-all group"
               >
                 <BookOpen size={16} />
                 BadAshWednesdays
@@ -68,7 +73,7 @@ export function HeroSection() {
                 { label: "Cloud Providers", value: "3", sub: "AWS · Azure · GCP" },
                 { label: "Published", value: "Weekly", sub: "BadAshWednesdays" },
               ].map((stat) => (
-                <div key={stat.label} className="border border-terminal-border rounded p-4 bg-terminal-surface/50">
+                <div key={stat.label} className="glass-card rounded p-4">
                   <div className="font-mono text-xl font-bold text-terminal-green">{stat.value}</div>
                   <div className="font-mono text-xs text-terminal-text mt-1">{stat.label}</div>
                   <div className="font-mono text-xs text-terminal-muted mt-0.5">{stat.sub}</div>

@@ -12,18 +12,18 @@
     --card-foreground: #e0e0e0;
     --popover: #111111;
     --popover-foreground: #e0e0e0;
-    --primary: #00ff41;
-    --primary-foreground: #0a0a0a;
-    --secondary: #1f1f1f;
+    --primary: #0080ff;
+    --primary-foreground: #ffffff;
+    --secondary: #1a1a2e;
     --secondary-foreground: #e0e0e0;
-    --muted: #1a1a1a;
-    --muted-foreground: #888888;
-    --accent: #00d4ff;
-    --accent-foreground: #0a0a0a;
-    --destructive: #ff3333;
-    --border: #1f1f1f;
-    --input: #1a1a1a;
-    --ring: #00ff41;
+    --muted: #12121e;
+    --muted-foreground: #8888aa;
+    --accent: #ff2222;
+    --accent-foreground: #ffffff;
+    --destructive: #ff2222;
+    --border: #1a1a2e;
+    --input: #12121e;
+    --ring: #0080ff;
     --radius: 0.5rem;
   }
 
@@ -47,23 +47,25 @@
   ::-webkit-scrollbar { width: 6px; height: 6px; }
   ::-webkit-scrollbar-track { background: #111111; }
   ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: #00ff41; }
+  ::-webkit-scrollbar-thumb:hover { background: #0080ff; }
 
-  ::selection { background: rgba(0, 255, 65, 0.2); color: #00ff41; }
-  *:focus-visible { outline: 2px solid #00ff41; outline-offset: 2px; }
+  ::selection { background: rgba(0, 128, 255, 0.25); color: #ffffff; }
+  *:focus-visible { outline: 2px solid #0080ff; outline-offset: 2px; }
 }
 
 @layer components {
   .terminal-chrome {
-    background: #111111;
-    border: 1px solid #1f1f1f;
+    background: rgba(10, 10, 20, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 128, 255, 0.12);
     border-radius: 8px;
-    box-shadow: 0 0 0 1px rgba(0, 255, 65, 0.05), 0 20px 60px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 0 1px rgba(0, 128, 255, 0.06), 0 20px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
   .terminal-chrome-header {
-    background: #161616;
-    border-bottom: 1px solid #1f1f1f;
+    background: rgba(8, 8, 18, 0.85);
+    border-bottom: 1px solid rgba(0, 128, 255, 0.1);
     padding: 10px 16px;
     border-radius: 8px 8px 0 0;
     display: flex;
@@ -71,12 +73,27 @@
     gap: 8px;
   }
 
+  .glass-card {
+    background: rgba(10, 10, 20, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 128, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(0, 128, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 128, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
   .text-glow-green {
-    text-shadow: 0 0 8px rgba(0, 255, 65, 0.6), 0 0 20px rgba(0, 255, 65, 0.3);
+    text-shadow: 0 0 8px rgba(0, 128, 255, 0.7), 0 0 20px rgba(0, 128, 255, 0.4);
   }
 
   .text-glow-cyan {
-    text-shadow: 0 0 8px rgba(0, 212, 255, 0.6), 0 0 20px rgba(0, 212, 255, 0.3);
+    text-shadow: 0 0 8px rgba(255, 34, 34, 0.7), 0 0 20px rgba(255, 34, 34, 0.4);
   }
 
   .scanline-overlay {

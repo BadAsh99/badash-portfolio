@@ -4,17 +4,17 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const BOOT_LINES = [
-  { text: "BADASH SECURITY LAB v2.0 — INITIALIZING...", delay: 0, color: "text-terminal-green" },
-  { text: "Loading OWASP LLM Top 10 scanner...", delay: 300, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
-  { text: "Semantic detection engine (all-MiniLM-L6-v2)...", delay: 600, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
-  { text: "Prompt injection analyzer...", delay: 900, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
-  { text: "Cloud security scanner...", delay: 1100, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
-  { text: "Connecting to Anthropic API...", delay: 1300, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
-  { text: "", delay: 1500, color: "text-terminal-text" },
-  { text: "ASH CLEMENTS", delay: 1700, color: "text-terminal-green", big: true },
-  { text: "SR. SASE & AI SECURITY CONSULTANT  //  PALO ALTO NETWORKS", delay: 1900, color: "text-terminal-cyan" },
+  { text: "LLMGUARDT2 // AI SECURITY FRAMEWORK — BOOT SEQUENCE", delay: 0, color: "text-terminal-green" },
+  { text: "Loading OWASP LLM Top 10 attack library... 35 payloads", delay: 350, color: "text-terminal-text", suffix: "  [ARMED]", suffixColor: "text-terminal-cyan" },
+  { text: "Semantic injection detector... cosine similarity threshold 0.75", delay: 750, color: "text-terminal-text", suffix: "  [ACTIVE]", suffixColor: "text-terminal-green" },
+  { text: "Red-team scan engine... multi-provider (Claude / GPT-4)", delay: 1100, color: "text-terminal-text", suffix: "  [READY]", suffixColor: "text-terminal-green" },
+  { text: "Firewall breach simulator... prompt injection // jailbreak // DoS", delay: 1450, color: "text-terminal-text", suffix: "  [LOADED]", suffixColor: "text-terminal-cyan" },
+  { text: "Anthropic API... authenticated", delay: 1750, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
   { text: "", delay: 2000, color: "text-terminal-text" },
-  { text: "Building at the intersection of PAN-OS, GenAI, and enterprise security.", delay: 2100, color: "text-terminal-muted" },
+  { text: "ASH CLEMENTS", delay: 2200, color: "text-terminal-green", big: true },
+  { text: "AI RED-TEAMER  //  HACKER  //  BUILDER  //  PALO ALTO NETWORKS", delay: 2450, color: "text-terminal-cyan" },
+  { text: "", delay: 2550, color: "text-terminal-text" },
+  { text: "Breaking AI systems before the bad actors do.", delay: 2650, color: "text-terminal-muted" },
 ];
 
 interface BootLine {

@@ -25,17 +25,17 @@ const config: Config = {
         card: { DEFAULT: "var(--card)", foreground: "var(--card-foreground)" },
         terminal: {
           bg: "#0a0a0a",
-          surface: "#111111",
-          border: "#1f1f1f",
-          green: "#00ff41",
-          "green-dim": "#00cc33",
-          cyan: "#00d4ff",
+          surface: "#0d0d14",
+          border: "#1a1a2e",
+          green: "#0080ff",
+          "green-dim": "#0055cc",
+          cyan: "#ff2222",
           orange: "#ff6b35",
-          red: "#ff3333",
+          red: "#ff2222",
           yellow: "#ffd700",
-          dim: "#4a4a4a",
+          dim: "#3a3a5a",
           text: "#e0e0e0",
-          muted: "#888888",
+          muted: "#8888aa",
         },
       },
       fontFamily: {
@@ -49,6 +49,9 @@ const config: Config = {
         "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.4s ease-out",
         "matrix-fall": "matrixFall 3s linear infinite",
+        "float-slow": "floatOrb 12s ease-in-out infinite alternate",
+        "float-medium": "floatOrb2 9s ease-in-out infinite alternate",
+        "float-fast": "floatOrb3 7s ease-in-out infinite alternate",
       },
       keyframes: {
         blink: {
@@ -56,8 +59,8 @@ const config: Config = {
           "50%": { opacity: "0" },
         },
         glow: {
-          from: { textShadow: "0 0 5px #00ff41, 0 0 10px #00ff41" },
-          to: { textShadow: "0 0 10px #00ff41, 0 0 25px #00ff41, 0 0 50px #00ff41" },
+          from: { textShadow: "0 0 5px #0080ff, 0 0 10px #0080ff" },
+          to: { textShadow: "0 0 10px #0080ff, 0 0 25px #0080ff, 0 0 50px #0080ff" },
         },
         scanline: {
           "0%": { top: "-5%" },
@@ -75,20 +78,32 @@ const config: Config = {
           "0%": { transform: "translateY(-100%)", opacity: "1" },
           "100%": { transform: "translateY(100vh)", opacity: "0" },
         },
+        floatOrb: {
+          "0%": { transform: "translate(0px, 0px) scale(1)" },
+          "100%": { transform: "translate(40px, -50px) scale(1.08)" },
+        },
+        floatOrb2: {
+          "0%": { transform: "translate(0px, 0px) scale(1)" },
+          "100%": { transform: "translate(-35px, 40px) scale(0.95)" },
+        },
+        floatOrb3: {
+          "0%": { transform: "translate(0px, 0px) scale(1)" },
+          "100%": { transform: "translate(25px, 30px) scale(1.05)" },
+        },
       },
       boxShadow: {
-        "glow-green": "0 0 10px rgba(0, 255, 65, 0.3), 0 0 20px rgba(0, 255, 65, 0.1)",
-        "glow-cyan": "0 0 10px rgba(0, 212, 255, 0.3), 0 0 20px rgba(0, 212, 255, 0.1)",
-        "glow-red": "0 0 10px rgba(255, 51, 51, 0.3)",
-        "terminal": "inset 0 0 60px rgba(0, 255, 65, 0.03)",
+        "glow-green": "0 0 10px rgba(0, 128, 255, 0.4), 0 0 20px rgba(0, 128, 255, 0.2)",
+        "glow-cyan": "0 0 10px rgba(255, 34, 34, 0.4), 0 0 20px rgba(255, 34, 34, 0.2)",
+        "glow-red": "0 0 10px rgba(255, 34, 34, 0.5), 0 0 20px rgba(255, 34, 34, 0.2)",
+        "terminal": "inset 0 0 60px rgba(0, 128, 255, 0.04)",
       },
       typography: {
         terminal: {
           css: {
             "--tw-prose-body": "#e0e0e0",
-            "--tw-prose-headings": "#00ff41",
-            "--tw-prose-code": "#00d4ff",
-            "--tw-prose-links": "#00d4ff",
+            "--tw-prose-headings": "#0080ff",
+            "--tw-prose-code": "#ff2222",
+            "--tw-prose-links": "#0080ff",
             "--tw-prose-bold": "#ffffff",
           },
         },

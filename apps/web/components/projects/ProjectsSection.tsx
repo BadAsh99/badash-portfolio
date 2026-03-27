@@ -44,7 +44,10 @@ export function ProjectsSection() {
   }, []);
 
   return (
-    <section id="projects" className="py-24 px-4 max-w-6xl mx-auto">
+    <section id="projects" className="py-24 px-4 max-w-6xl mx-auto relative">
+      <div className="absolute rounded-full pointer-events-none" style={{ top: 0, right: 0, width: "320px", height: "320px", background: "radial-gradient(circle, rgba(0,102,255,0.10) 0%, transparent 70%)", filter: "blur(60px)" }} />
+      <div className="absolute rounded-full pointer-events-none" style={{ bottom: 0, left: 0, width: "260px", height: "260px", background: "radial-gradient(circle, rgba(204,0,0,0.08) 0%, transparent 70%)", filter: "blur(50px)" }} />
+
       <div className="mb-10">
         <div className="font-mono text-terminal-green text-sm mb-2">{"// SECTION 03"}</div>
         <h2 className="text-3xl font-bold font-mono text-terminal-text">
@@ -61,7 +64,7 @@ export function ProjectsSection() {
           return (
             <div
               key={project.id}
-              className="terminal-chrome p-4 flex flex-col gap-3 hover:border-terminal-green/30 transition-colors group"
+              className="glass-card p-4 flex flex-col gap-3 group"
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-2">
