@@ -32,7 +32,7 @@ export default function AboutPage() {
         <div className="terminal-chrome p-6 mb-8">
           <div className="flex items-center gap-2 mb-4">
             <Terminal size={14} className="text-terminal-green" />
-            <span className="font-mono text-xs text-terminal-muted">ash@badash-lab:~ $ cat bio.txt</span>
+            <span className="font-mono text-xs text-terminal-muted">ash@badash99-lab:~ $ cat bio.txt</span>
           </div>
           <div className="font-mono text-sm text-terminal-text space-y-3 leading-relaxed">
             <p>

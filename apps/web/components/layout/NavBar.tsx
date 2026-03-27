@@ -38,7 +38,7 @@ export function NavBar() {
         <Link href="/" className="flex items-center gap-2 group">
           <Terminal size={18} className="text-terminal-green group-hover:animate-glow-pulse" />
           <span className="font-mono font-bold text-terminal-green text-sm tracking-wider group-hover:text-glow-green transition-all">
-            badash<span className="text-terminal-muted">.dev</span>
+            badash99<span className="text-terminal-muted">.dev</span>
           </span>
         </Link>
 

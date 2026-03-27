@@ -22,7 +22,7 @@ export function HeroSection() {
       />
 
       <div className="relative z-10 w-full max-w-4xl mx-auto">
-        <TerminalWindow title="ash@badash-lab:~$ boot" className="w-full">
+        <TerminalWindow title="ash@badash99-lab:~$ boot" className="w-full">
           <TerminalBoot onComplete={() => setBootDone(true)} />
         </TerminalWindow>
 
