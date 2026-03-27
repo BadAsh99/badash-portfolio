@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { TerminalBoot } from "./TerminalBoot";
+import { TerminalBoot, LLMGUARDT2_LINES, CLOUDGUARD_LINES } from "./TerminalBoot";
 import { TerminalWindow } from "@/components/shared/TerminalWindow";
 import { ArrowRight, Shield, BookOpen } from "lucide-react";
 
 export function HeroSection() {
-  const [bootDone, setBootDone] = useState(false);
+  const [done1, setDone1] = useState(false);
+  const [done2, setDone2] = useState(false);
+  const bootDone = done1 && done2;
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-4 pt-14 relative overflow-hidden">
@@ -26,10 +28,15 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto">
-        <TerminalWindow title="ash@badash99-lab:~$ boot" className="w-full">
-          <TerminalBoot onComplete={() => setBootDone(true)} />
-        </TerminalWindow>
+      <div className="relative z-10 w-full max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <TerminalWindow title="ash@badash99:~$ ./llmguardt2 --boot">
+            <TerminalBoot lines={LLMGUARDT2_LINES} title="llmguardt2 — AI security framework" onComplete={() => setDone1(true)} />
+          </TerminalWindow>
+          <TerminalWindow title="ash@badash99:~$ ./cloudguard --boot">
+            <TerminalBoot lines={CLOUDGUARD_LINES} title="cloudguard — cloud security scanner" onComplete={() => setDone2(true)} />
+          </TerminalWindow>
+        </div>
 
         <AnimatePresence>
           {bootDone && (

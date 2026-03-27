@@ -3,21 +3,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const BOOT_LINES = [
-  { text: "LLMGUARDT2 // AI SECURITY FRAMEWORK — BOOT SEQUENCE", delay: 0, color: "text-terminal-green" },
-  { text: "Loading OWASP LLM Top 10 attack library... 35 payloads", delay: 350, color: "text-terminal-text", suffix: "  [ARMED]", suffixColor: "text-terminal-cyan" },
-  { text: "Semantic injection detector... cosine similarity threshold 0.75", delay: 750, color: "text-terminal-text", suffix: "  [ACTIVE]", suffixColor: "text-terminal-green" },
-  { text: "Red-team scan engine... multi-provider (Claude / GPT-4)", delay: 1100, color: "text-terminal-text", suffix: "  [READY]", suffixColor: "text-terminal-green" },
-  { text: "Firewall breach simulator... prompt injection // jailbreak // DoS", delay: 1450, color: "text-terminal-text", suffix: "  [LOADED]", suffixColor: "text-terminal-cyan" },
-  { text: "Anthropic API... authenticated", delay: 1750, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
-  { text: "", delay: 2000, color: "text-terminal-text" },
-  { text: "ASH CLEMENTS", delay: 2200, color: "text-terminal-green", big: true },
-  { text: "AI RED-TEAMER  //  HACKER  //  BUILDER  //  PALO ALTO NETWORKS", delay: 2450, color: "text-terminal-cyan" },
-  { text: "", delay: 2550, color: "text-terminal-text" },
-  { text: "Breaking AI systems before the bad actors do.", delay: 2650, color: "text-terminal-muted" },
-];
-
-interface BootLine {
+export interface BootLine {
   text: string;
   delay: number;
   color: string;
@@ -25,6 +11,34 @@ interface BootLine {
   suffixColor?: string;
   big?: boolean;
 }
+
+export const LLMGUARDT2_LINES: BootLine[] = [
+  { text: "LLMGUARDT2 // AI SECURITY FRAMEWORK", delay: 0, color: "text-terminal-green" },
+  { text: "OWASP LLM Top 10... 35 payloads", delay: 350, color: "text-terminal-text", suffix: "  [ARMED]", suffixColor: "text-terminal-cyan" },
+  { text: "Semantic injection detector... 0.75 threshold", delay: 750, color: "text-terminal-text", suffix: "  [ACTIVE]", suffixColor: "text-terminal-green" },
+  { text: "Red-team engine... Claude / GPT-4", delay: 1100, color: "text-terminal-text", suffix: "  [READY]", suffixColor: "text-terminal-green" },
+  { text: "Breach simulator... injection / jailbreak / DoS", delay: 1450, color: "text-terminal-text", suffix: "  [LOADED]", suffixColor: "text-terminal-cyan" },
+  { text: "Anthropic API... authenticated", delay: 1750, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
+  { text: "", delay: 2000, color: "text-terminal-text" },
+  { text: "ASH CLEMENTS", delay: 2200, color: "text-terminal-green", big: true },
+  { text: "AI RED-TEAMER  //  HACKER  //  BUILDER", delay: 2450, color: "text-terminal-cyan" },
+  { text: "", delay: 2550, color: "text-terminal-text" },
+  { text: "Breaking AI systems before bad actors do.", delay: 2650, color: "text-terminal-muted" },
+];
+
+export const CLOUDGUARD_LINES: BootLine[] = [
+  { text: "CLOUDGUARD // CLOUD SECURITY SCANNER", delay: 200, color: "text-terminal-green" },
+  { text: "AWS IAM misconfiguration scanner...", delay: 550, color: "text-terminal-text", suffix: "  [ARMED]", suffixColor: "text-terminal-cyan" },
+  { text: "Azure RBAC privilege escalation...", delay: 950, color: "text-terminal-text", suffix: "  [ACTIVE]", suffixColor: "text-terminal-green" },
+  { text: "GCP service account auditor...", delay: 1300, color: "text-terminal-text", suffix: "  [READY]", suffixColor: "text-terminal-green" },
+  { text: "S3 public exposure detector...", delay: 1600, color: "text-terminal-text", suffix: "  [LOADED]", suffixColor: "text-terminal-cyan" },
+  { text: "Zero-trust policy analyzer...", delay: 1900, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
+  { text: "", delay: 2100, color: "text-terminal-text" },
+  { text: "PALO ALTO NETWORKS", delay: 2300, color: "text-terminal-green", big: true },
+  { text: "SR. SASE CONSULTANT  //  PRISMA ACCESS", delay: 2550, color: "text-terminal-cyan" },
+  { text: "", delay: 2650, color: "text-terminal-text" },
+  { text: "Securing cloud before it's too late.", delay: 2750, color: "text-terminal-muted" },
+];
 
 function TypewriterLine({ line, onDone }: { line: BootLine; onDone?: () => void }) {
   const [displayed, setDisplayed] = useState("");
@@ -48,10 +62,10 @@ function TypewriterLine({ line, onDone }: { line: BootLine; onDone?: () => void 
     return () => clearInterval(interval);
   }, [line, onDone]);
 
-  if (!line.text) return <div className="h-4" />;
+  if (!line.text) return <div className="h-3" />;
 
   return (
-    <div className={cn("font-mono leading-relaxed", line.big ? "text-2xl md:text-3xl font-bold" : "text-sm md:text-base")}>
+    <div className={cn("font-mono leading-snug", line.big ? "text-lg md:text-xl font-bold" : "text-xs md:text-sm")}>
       <span className={line.color}>{displayed}</span>
       {showSuffix && line.suffix && (
         <span className={line.suffixColor}>{line.suffix}</span>
@@ -60,39 +74,39 @@ function TypewriterLine({ line, onDone }: { line: BootLine; onDone?: () => void 
   );
 }
 
-export function TerminalBoot({ onComplete }: { onComplete?: () => void }) {
+export function TerminalBoot({ lines, title, onComplete }: { lines: BootLine[]; title: string; onComplete?: () => void }) {
   const [visibleLines, setVisibleLines] = useState<number[]>([]);
   const [doneLines, setDoneLines] = useState<Set<number>>(new Set());
 
   useEffect(() => {
-    BOOT_LINES.forEach((line, i) => {
+    lines.forEach((line, i) => {
       setTimeout(() => {
         setVisibleLines((prev) => [...prev, i]);
       }, line.delay);
     });
-  }, []);
+  }, [lines]);
 
   const handleDone = (i: number) => {
     setDoneLines((prev) => {
       const next = new Set(prev).add(i);
-      if (next.size === BOOT_LINES.length) onComplete?.();
+      if (next.size === lines.length) onComplete?.();
       return next;
     });
   };
 
   return (
-    <div className="space-y-1 p-2">
+    <div className="space-y-0.5 p-2">
       <div className="flex items-center gap-2 mb-3 text-terminal-dim font-mono text-xs">
         <span className="text-terminal-green">▶</span>
-        <span>bash — 80×24</span>
+        <span>{title}</span>
       </div>
-      {BOOT_LINES.map((line, i) =>
+      {lines.map((line, i) =>
         visibleLines.includes(i) ? (
           <TypewriterLine key={i} line={line} onDone={() => handleDone(i)} />
         ) : null
       )}
-      {doneLines.size < BOOT_LINES.length && (
-        <span className="inline-block w-2 h-4 bg-terminal-green animate-cursor-blink" />
+      {doneLines.size < lines.length && (
+        <span className="inline-block w-2 h-3 bg-terminal-green animate-cursor-blink" />
       )}
     </div>
   );
