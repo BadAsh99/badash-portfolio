@@ -1,0 +1,16 @@
+[Unit]
+Description=LLMGuardT2 Flask App
+After=network.target
+
+[Service]
+Type=simple
+User=parallels
+WorkingDirectory=/home/parallels/Code/my-dev-environments/llmguardt2
+ExecStart=/home/parallels/Code/my-dev-environments/llmguardt2/venv/bin/python app.py
+Restart=always
+RestartSec=5
+StandardOutput=append:/home/parallels/Code/my-dev-environments/llmguardt2/app.log
+StandardError=append:/home/parallels/Code/my-dev-environments/llmguardt2/app.log
+
+[Install]
+WantedBy=multi-user.target

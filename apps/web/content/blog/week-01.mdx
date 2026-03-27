@@ -1,0 +1,41 @@
+---
+title: "Week 1 — Why I'm Betting on Agentic AI Security"
+date: 2026-03-05
+description: "First entry in the pivot series. Why SASE consulting is merging with AI security, what I'm building, and where this is going."
+tags: ["SASE", "AI Security", "AIRS", "Palo Alto Networks"]
+week: 1
+---
+
+## The Setup
+
+I've been doing SASE consulting at Palo Alto Networks long enough to know that the security problems we're solving are shifting faster than the tooling can keep up.
+
+Prisma Access, GlobalProtect, PAN-OS — these are still the core. But the threat surface is changing. LLMs are getting deployed into enterprise workflows without the same scrutiny we'd apply to any other network-connected system. And the security teams I work with are still playing catch-up.
+
+That gap is where I'm spending my nights.
+
+## What Changed
+
+Three things converged over the last quarter:
+
+1. **AIRS** (AI Runtime Security) became a real product category at Palo Alto. I need to know it inside and out.
+2. The engagements I'm on keep surfacing the same question: *how do you secure an LLM endpoint the same way you'd secure a firewall rule?*
+3. I got tired of theorizing and started building.
+
+## What I'm Building
+
+Three tools, all open source, all solving real problems I've run into:
+
+- **LLMGuardT2** — OWASP LLM Top 10 scanner with semantic detection. Tests endpoints against 35+ payloads. The semantic piece is the differentiator — it catches paraphrased attacks that keyword filters miss.
+- **badash-killchain** — Multi-service LLM framework that simulates cross-app attack chains. The kind of thing you'd see in a real enterprise: 3 LLM microservices, a gateway, injection detection, audit logs.
+- **CloudGuard** — Cloud misconfiguration scanner, CIS Benchmark aligned, works across Azure/AWS/GCP.
+
+## The Meta-Goal
+
+This isn't just about tools. It's about repositioning from "Prisma Access deployment specialist" to "AI security architect." The overlap is larger than most people think — zero trust, least privilege, runtime monitoring — these principles apply directly to LLM deployments.
+
+BadAshWednesdays is the log. Every week I write up what I built, what broke, and what I learned.
+
+---
+
+*Next week: how the semantic detector works and why cosine similarity beats regex for catching injection attempts.*
