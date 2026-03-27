@@ -3,6 +3,7 @@ import { PlaygroundSection } from "@/components/playground/PlaygroundSection";
 import { SandboxSection } from "@/components/sandbox/SandboxSection";
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
 import { GitHubSection } from "@/components/github/GitHubSection";
+import { SecurityFeed } from "@/components/security/SecurityFeed";
 
 export default function HomePage() {
   return (
@@ -14,6 +15,8 @@ export default function HomePage() {
       <SandboxSection />
       <div className="border-t border-terminal-border" />
       <ProjectsSection />
+      <div className="border-t border-terminal-border" />
+      <SecurityFeed />
       <div className="border-t border-terminal-border" />
       <GitHubSection />
     </>
