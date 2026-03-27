@@ -14,17 +14,18 @@ FROM python:3.10-slim AS runtime
 
 WORKDIR /app
 
-COPY --from=builder /root/.local /root/.local
+RUN adduser --disabled-password --gecos '' appuser
 
-ENV PATH=/root/.local/bin:$PATH \
+COPY --from=builder /root/.local /home/appuser/.local
+
+ENV PATH=/home/appuser/.local/bin:$PATH \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
 COPY app.py scanner.py semantic_detector.py ./
 COPY templates/ templates/
 
-RUN adduser --disabled-password --gecos '' appuser \
-    && chown -R appuser:appuser /app
+RUN chown -R appuser:appuser /app /home/appuser/.local
 USER appuser
 
 EXPOSE 8080
