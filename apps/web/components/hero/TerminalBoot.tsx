@@ -65,7 +65,7 @@ function TypewriterLine({ line, onDone }: { line: BootLine; onDone?: () => void 
   if (!line.text) return <div className="h-3" />;
 
   return (
-    <div className={cn("font-mono leading-snug", line.big ? "text-lg md:text-xl font-bold" : "text-xs md:text-sm")}>
+    <div className={cn("font-mono leading-snug break-words", line.big ? "text-lg md:text-xl font-bold" : "text-xs md:text-sm")}>
       <span className={line.color}>{displayed}</span>
       {showSuffix && line.suffix && (
         <span className={line.suffixColor}>{line.suffix}</span>

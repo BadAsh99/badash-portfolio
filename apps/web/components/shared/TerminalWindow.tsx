@@ -11,8 +11,8 @@ interface TerminalWindowProps {
 
 export function TerminalWindow({ title, children, className, headerActions }: TerminalWindowProps) {
   return (
-    <div className={cn("terminal-chrome overflow-hidden", className)}>
-      <div className="terminal-chrome-header">
+    <div className={cn("terminal-chrome", className)}>
+      <div className="terminal-chrome-header overflow-hidden">
         <span className="terminal-dot bg-[#ff5f57]" />
         <span className="terminal-dot bg-[#febc2e]" />
         <span className="terminal-dot bg-[#28c840]" />
