@@ -24,9 +24,9 @@ const config: Config = {
         destructive: { DEFAULT: "var(--destructive)" },
         card: { DEFAULT: "var(--card)", foreground: "var(--card-foreground)" },
         terminal: {
-          bg: "#0a0a0a",
-          surface: "#0d0d14",
-          border: "#1a1a2e",
+          bg: "#04040e",
+          surface: "#0a0a1e",
+          border: "#1a1a3a",
           green: "#0080ff",
           "green-dim": "#0055cc",
           cyan: "#ff2222",
