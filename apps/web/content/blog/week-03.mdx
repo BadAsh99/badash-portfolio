@@ -1,0 +1,99 @@
+---
+title: "Week 3 — I Built a SOC for My Pool"
+date: "2026-03-28"
+description: "400k BTU gas heater, $300 monthly bills, and a RTL-SDR sniffing Southwest Gas at 915MHz. This is the Pool SOC — Strata Pool Manager."
+tags: ["IoT Security", "Rust", "SDR", "Home Automation", "Edge Compute", "K3s"]
+week: 3
+draft: false
+---
+
+I've been dropping hints the last two weeks. Time to deliver.
+
+I built a security operations center for my pool.
+
+Not a metaphor. A literal observability platform, with an RF ingestor, a thermal decay model, a fiscal kill-switch, and mTLS between every service. All because my gas bill hit $300 last month and I got mad enough to engineer a solution instead of just paying it.
+
+## The Problem
+
+Phoenix, AZ. A 400,000 BTU gas pool/spa heater. Southwest Gas at $4.21/hr when the heater runs.
+
+The pool doesn't hold heat overnight. I watched it drop 8.7°F between midnight and 6am on a calm 55°F night in January. Every degree I pre-heat costs money. Every degree I over-heat is money I'll never see again. The stock controller is a thermostat — no awareness of ambient conditions, no awareness of what that temperature will cost to maintain, no awareness of time-of-use.
+
+I'm a security architect. I instrument things. So I instrumented the pool.
+
+## Strata Pool Manager (SPM)
+
+SPM is a polyglot IoT system. Not a smart home app. A purpose-built platform with a data plane, an AI logic plane, and a physical actuation layer.
+
+**Stack:**
+
+- **Rust (Tokio + LibUSB)** — SDR gas meter ingestor. Data plane. Sub-10ms latency.
+- **Python (FastAPI + Scikit-learn)** — Thermal Decay Engine. AI logic plane. Predictive heating decisions.
+- **Flutter (Dart)** — Mobile dashboard. iOS/Android. The operator console.
+- **Alpine Linux + K3s** — Edge compute node. Minimalist, self-healing, runs on a Raspberry Pi 5.
+- **TimescaleDB** — Time-series telemetry. Every BTU accounted for.
+- **mTLS everywhere** — Zero trust between microservices. Same pattern I deploy for enterprise clients, except the "users" are pool sensors.
+
+## The SDR Angle
+
+This is the part that made me actually want to build it.
+
+Southwest Gas smart meters broadcast consumption data over 915MHz RF using the SCM+ protocol. It's a one-way, unencrypted broadcast — the meter yells its data into the air, and the utility truck drives by and listens. No API. No account login. No permission required. RF is public spectrum.
+
+A $35 RTL-SDR V4 dongle with an R828D tuner and a 3.2" dipole antenna can receive those broadcasts. I have mine sitting next to the router, logging my own meter data in real time.
+
+The Rust ingestor decodes the SCM+ packets from raw IQ samples. I'm still learning Rust — this project is the vehicle. The constraint is latency: I want sub-10ms from packet capture to parsed reading in the data plane. Rust earns its complexity budget here. A Python implementation would work, but it would also make me feel bad about myself.
+
+```rust
+// Not the final impl — but the shape of it
+// RTL-SDR → raw IQ → Manchester decode → SCM+ frame parse → meter ID + consumption
+```
+
+More on the actual implementation next week. That deserves its own post.
+
+## The Fiscal Kill-Switch
+
+The intelligence layer is where it gets interesting.
+
+The Thermal Decay Engine models pool temperature as a function of ambient temp, wind speed (OpenWeatherMap API), and observed decay rate from the Govee Bluetooth water sensors. Given a target temperature and a current temperature, it calculates: *how long will it take to get there, and what will that cost?*
+
+If cost-to-target at $4.21/hr exceeds a configurable daily thermal budget — heater gets inhibited.
+
+The physical actuator is a Shelly 1 Gen4 relay wired as a fireman's switch on the heater circuit. SPM doesn't control the heater's thermostat — it controls whether the heater is allowed to run at all. Same concept as a network policy enforcer sitting in front of an application: the app doesn't know or care about the policy, but it can't do anything the policy doesn't permit.
+
+The Shelly talks to the control plane via mTLS. If the API is unreachable, the relay defaults to OFF. Fail-closed. Standard secure design.
+
+## Hardware Inventory
+
+Everything I'm using is in hand:
+
+| Component | Role |
+|-----------|------|
+| MacBook Pro M3 Pro | Command center |
+| Alpine Linux VM (Parallels) → Pi 5 | Edge ingestor node |
+| RTL-SDR V4 (R828D) + 3.2" dipole | 915MHz SCM+ sniffer |
+| Shelly 1 Gen4 | Fireman's switch / relay actuator |
+| Govee BT water probes | Pool/spa temp sensors |
+| OpenWeatherMap API | Ambient + wind telemetry |
+
+## Why This Matters Beyond the Pool
+
+I'm using this project to force myself to build things I'd otherwise just read about:
+
+- **Rust** — I've been avoiding it. No more. The SDR ingestor is the forcing function.
+- **K3s on Alpine** — Kubernetes on the edge, not in a cloud. Minimum viable footprint.
+- **mTLS in an IoT context** — Same zero trust posture I implement for enterprise clients, but with sensor nodes instead of user endpoints.
+
+The security patterns are identical to what I architect for enterprise SASE deployments. The diff is that my pool doesn't have a CISO. I am the CISO. And the pool doesn't care about my feelings when it drops to 68°F at 6am.
+
+## What's Next
+
+Week 4 is the Rust SDR ingestor deep dive.
+
+How do you go from raw RTL-SDR IQ samples to a parsed SCM+ frame in Rust? What does the SCM+ packet structure actually look like? What does learning Rust while writing production-grade async I/O code actually feel like?
+
+That's next Wednesday.
+
+---
+
+*BadAshWednesdays is a field log. Real builds, real problems, no tutorials. Week 4: the Rust sniffer goes deep.*

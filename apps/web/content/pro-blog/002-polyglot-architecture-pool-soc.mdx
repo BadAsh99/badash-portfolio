@@ -1,0 +1,62 @@
+---
+title: "The Right Tool for the Right Plane"
+date: "2026-03-28"
+description: "A home automation project for a 400k BTU gas heater taught me more about SASE architecture discipline than any vendor whitepaper. Here's what polyglot design actually looks like in practice."
+tags: ["Architecture", "IoT Security", "SASE", "Rust", "Zero Trust"]
+draft: false
+---
+
+Last winter I got tired of manually managing a 400k BTU gas pool heater and decided to automate it properly. Not with a smart home app. With a real system.
+
+What I ended up building — I'm calling it the Strata Pool Manager — turned into an accidental architecture exercise. Every decision I made maps directly to tradeoffs I navigate on enterprise SASE deployments. And the discipline required to build it well is exactly the same.
+
+## Polyglot By Design, Not Accident
+
+SPM runs four distinct planes, each in the right language for the job:
+
+- **Rust + Tokio** handles the data plane — ingesting 915MHz SCM+ packets off the gas utility meter via RTL-SDR. No API, no vendor integration, no permission needed. Public RF spectrum is public.
+- **Python + FastAPI + Scikit-learn** handles the logic plane — regression models, cost forecasting, decision logic.
+- **Flutter** handles the mobile plane — single codebase, native ARM64 compile, consistent across iOS, Android, and web.
+- **Alpine Linux + K3s** handles the edge infrastructure — 5MB OS footprint, self-healing, minimized attack surface.
+
+None of those choices were defaults. Each one required me to argue against the path of least resistance.
+
+That's the point.
+
+## Why Rust for the Data Pipeline
+
+Buffer overflows in a data ingestion pipeline don't cause crashes. They cause missed telemetry. Missed telemetry means the decision engine is working from stale or incomplete data. In a heating system, that's a cold pool. In a security data pipeline, that's a missed detection.
+
+Rust's memory safety guarantees aren't just a security property — they're a reliability property. Zero-latency, high-concurrency, no GC pauses. When you're processing RF packets at volume, you want the data plane written in something that will never silently drop data because of a memory management bug.
+
+Python would have been faster to write. It would have been wrong for the job.
+
+## Policy Enforcement at the Edge
+
+The system has what I call a Fiscal Kill-Switch. The rule is simple: if the projected cost to reach the target temperature exceeds the daily heating budget, the heater is inhibited.
+
+That's policy enforcement at the edge, evaluated before action, against a declarative rule. It's the same concept as a SASE policy engine — inspect the request, apply the rule, enforce before the traffic flows. Not after the $40 gas bill arrives.
+
+This is also why TimescaleDB and not a general-purpose relational database. High-velocity time-series telemetry needs a purpose-built store. Shoehorning sensor data into Postgres because it's familiar is the same mistake as running all your traffic inspection on your authentication nodes because that's where the compute is.
+
+## mTLS on Localhost
+
+Every service in the stack uses mutual TLS — even services talking to each other on the same host.
+
+I get raised eyebrows at this. "It's localhost, why does it matter?"
+
+Because the habit matters. Zero Trust isn't a product, it's a posture. If you're used to trusting local traffic, you'll architect systems that trust local traffic. When that system grows, or gets containerized, or gets deployed to a shared environment, the assumption bakes in. mTLS between microservices on localhost is not overhead — it's the architectural discipline that keeps Zero Trust from being a marketing term.
+
+## The Parallel That Actually Matters
+
+In enterprise SASE deployments, the hardest part isn't the technology. It's convincing the team not to reach for the familiar tool when the right tool is different.
+
+You don't run DPI on the same node handling authentication. You don't use a general-purpose SIEM for raw NetFlow telemetry at scale. You don't trust internal traffic because it's internal. Separation of concerns isn't just good engineering — it's security architecture.
+
+SPM is a home project. But the discipline behind it — choosing Rust for the data plane and Python for the logic plane, K3s instead of K8s, Alpine instead of Ubuntu, TimescaleDB instead of whatever's already running — is exactly the same discipline required to build secure, scalable systems at enterprise scale.
+
+The right tool for the right plane. Every time, even when it's harder.
+
+---
+
+*Signal / Noise is a practitioner-focused series on AI security and enterprise architecture. No vendor pitches, no theoretical frameworks — just what's actually working in the field.*
