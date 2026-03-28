@@ -1,7 +1,7 @@
 ---
 title: "Week 3 — I Built a SOC for My Pool"
 date: "2026-03-28"
-description: "400k BTU gas heater, $300 monthly bills, and a RTL-SDR sniffing Southwest Gas at 915MHz. This is the Pool SOC — Strata Pool Manager."
+description: "250k BTU gas heater, $300 monthly bills, and a RTL-SDR sniffing Southwest Gas at 915MHz. This is the Pool SOC — Strata Pool Manager."
 tags: ["IoT Security", "Rust", "SDR", "Home Automation", "Edge Compute", "K3s"]
 week: 3
 draft: false
@@ -15,7 +15,7 @@ Not a metaphor. A literal observability platform, with an RF ingestor, a thermal
 
 ## The Problem
 
-Phoenix, AZ. A 400,000 BTU gas pool/spa heater. Southwest Gas at $4.21/hr when the heater runs.
+Phoenix, AZ. A 250,000 BTU gas pool/spa heater. Southwest Gas at $4.21/hr when the heater runs.
 
 The pool doesn't hold heat overnight. I watched it drop 8.7°F between midnight and 6am on a calm 55°F night in January. Every degree I pre-heat costs money. Every degree I over-heat is money I'll never see again. The stock controller is a thermostat — no awareness of ambient conditions, no awareness of what that temperature will cost to maintain, no awareness of time-of-use.
 
