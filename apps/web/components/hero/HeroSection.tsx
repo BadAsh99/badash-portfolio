@@ -97,6 +97,26 @@ export function HeroSection() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            transition={{ delay: 3.5 }}
+            className="relative z-10 mt-2 text-center"
+          >
+            <a
+              href="https://ashclements.dev"
+              aria-hidden="true"
+              tabIndex={-1}
+              className="font-mono text-[10px] text-terminal-dim opacity-[0.09] hover:opacity-35 transition-opacity duration-1000 tracking-widest"
+            >
+              [SYS] ./connect --host 0x4153485f434c454d454e5453 --silent ↵
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {bootDone && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
             className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           >

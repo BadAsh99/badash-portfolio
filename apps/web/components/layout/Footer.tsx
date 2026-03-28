@@ -19,8 +19,14 @@ export function Footer() {
           <a href="https://linkedin.com/in/ash-clements" target="_blank" rel="noopener noreferrer" className="hover:text-terminal-green transition-colors">LinkedIn</a>
           <Link href="/blog" className="hover:text-terminal-green transition-colors">Blog</Link>
         </div>
-        <span className="font-mono text-xs text-terminal-dim">
+        <span className="font-mono text-xs text-terminal-dim flex items-center gap-2">
           {new Date().getFullYear()} — Built with Next.js + Railway
+          <a
+            href="https://ashclements.dev"
+            aria-hidden="true"
+            tabIndex={-1}
+            className="opacity-[0.07] hover:opacity-40 transition-opacity duration-700 text-terminal-green select-none"
+          >⌐■</a>
         </span>
       </div>
     </footer>
