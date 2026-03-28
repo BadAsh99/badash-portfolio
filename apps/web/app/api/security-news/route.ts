@@ -50,7 +50,7 @@ async function fetchNVDRecent(): Promise<ThreatItem[]> {
       const cve = item.cve as Record<string, unknown>;
       const descriptions = cve.descriptions as Array<{ lang: string; value: string }>;
       const desc = descriptions?.find((d) => d.lang === "en")?.value ?? "";
-      const metrics = cve.metrics as Record<string, unknown>;
+      const metrics = cve.metrics as Record<string, Array<{ cvssData: { baseScore: number } }>>;
       const cvssData = metrics?.cvssMetricV31?.[0]?.cvssData ?? metrics?.cvssMetricV30?.[0]?.cvssData;
       const score = cvssData?.baseScore ?? 0;
       const severity: ThreatItem["severity"] = score >= 9 ? "critical" : score >= 7 ? "high" : "medium";
