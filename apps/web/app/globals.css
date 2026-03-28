@@ -124,3 +124,46 @@
   .badge-info     { @apply bg-gray-900 text-gray-400 border border-gray-700 text-xs px-2 py-0.5 rounded font-mono font-medium; }
 }
 
+/* ── Pro Site Light Mode ─────────────────────────────────────────── */
+.pro-light {
+  background-color: #f5f0e8;
+  color: #1c1c2e;
+}
+
+.pro-light nav {
+  background-color: rgba(245, 240, 232, 0.96) !important;
+  border-color: rgba(0, 80, 180, 0.12) !important;
+}
+
+.pro-light .text-white,
+.pro-light .text-terminal-text { color: #1c1c2e !important; }
+
+.pro-light .text-terminal-muted { color: #5a5870 !important; }
+.pro-light .text-terminal-dim   { color: #8888a0 !important; }
+
+.pro-light .border-terminal-border { border-color: rgba(0, 80, 180, 0.14) !important; }
+.pro-light .border-t { border-color: rgba(0, 80, 180, 0.12) !important; }
+
+.pro-light .glass-card {
+  background: rgba(237, 232, 222, 0.85) !important;
+  border-color: rgba(0, 80, 180, 0.14) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07) !important;
+}
+
+.pro-light .glass-card:hover {
+  border-color: rgba(0, 80, 180, 0.32) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07), 0 0 16px rgba(0, 80, 180, 0.08) !important;
+}
+
+.pro-light footer {
+  border-color: rgba(0, 80, 180, 0.12) !important;
+}
+
+.pro-light button[aria-label="Toggle theme"] {
+  color: #5a5870 !important;
+}
+.pro-light button[aria-label="Toggle theme"]:hover {
+  color: #1c1c2e !important;
+  background-color: rgba(0, 80, 180, 0.07) !important;
+}
+

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { ProThemeToggle } from "./ProThemeToggle";
 
 const links = [
   { href: "/pro/experience", label: "Experience" },
@@ -67,6 +68,7 @@ export function ProNavBar() {
           >
             LinkedIn ↗
           </a>
+          <ProThemeToggle />
         </div>
 
         <button
