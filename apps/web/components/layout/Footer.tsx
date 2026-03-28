@@ -15,8 +15,6 @@ export function Footer() {
           </span>
         </div>
         <div className="flex items-center gap-6 font-mono text-xs text-terminal-dim">
-          <a href="https://github.com/BadAsh99" target="_blank" rel="noopener noreferrer" className="hover:text-terminal-green transition-colors">GitHub</a>
-          <a href="https://linkedin.com/in/ash-clements" target="_blank" rel="noopener noreferrer" className="hover:text-terminal-green transition-colors">LinkedIn</a>
           <Link href="/blog" className="hover:text-terminal-green transition-colors">Blog</Link>
         </div>
         <span className="font-mono text-xs text-terminal-dim flex items-center gap-2">

@@ -186,22 +186,6 @@ export default function AboutPage() {
         {/* Links */}
         <div className="flex flex-wrap gap-3 font-mono text-sm">
           <a
-            href="https://github.com/BadAsh99"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 glass-card px-4 py-2 rounded hover:border-terminal-green hover:text-terminal-green transition-colors"
-          >
-            GitHub — @BadAsh99 ↗
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ash-clements"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 glass-card px-4 py-2 rounded hover:border-terminal-cyan hover:text-terminal-cyan transition-colors"
-          >
-            LinkedIn — Bash99 ↗
-          </a>
-          <a
             href="/blog"
             className="flex items-center gap-2 glass-card px-4 py-2 rounded hover:border-terminal-green hover:text-terminal-green transition-colors"
           >

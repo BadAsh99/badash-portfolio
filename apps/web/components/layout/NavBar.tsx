@@ -58,14 +58,6 @@ export function NavBar() {
               {l.label}
             </Link>
           ))}
-          <a
-            href="https://github.com/BadAsh99"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-sm text-terminal-muted hover:text-terminal-green transition-colors"
-          >
-            GitHub ↗
-          </a>
         </div>
 
         {/* Mobile toggle */}
