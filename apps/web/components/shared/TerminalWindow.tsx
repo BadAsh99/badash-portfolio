@@ -23,7 +23,7 @@ export function TerminalWindow({ title, children, className, headerActions }: Te
         )}
         {headerActions && <div className="ml-auto">{headerActions}</div>}
       </div>
-      <div className="p-4">{children}</div>
+      <div className="p-4 overflow-hidden">{children}</div>
     </div>
   );
 }

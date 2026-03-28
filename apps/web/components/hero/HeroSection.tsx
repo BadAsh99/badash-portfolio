@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { TerminalBoot, LLMGUARDT2_LINES, CLOUDGUARD_LINES } from "./TerminalBoot";
 import { TerminalWindow } from "@/components/shared/TerminalWindow";
-import { HUDProfile } from "@/components/shared/HUDProfile";
 import { ArrowRight, Shield, BookOpen } from "lucide-react";
 
 export function HeroSection() {
@@ -29,26 +28,15 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-6xl mx-auto">
-        {/* 3-column hero: terminal | HUD | terminal */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 items-center">
-          <TerminalWindow title="ash@badash99:~$ ./llmguardt2 --boot" className="min-w-0 w-full min-h-[320px]">
+      <div className="relative z-10 w-full max-w-5xl mx-auto">
+        {/* Two terminal windows side by side */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <TerminalWindow title="ash@badash99:~$ ./llmguardt2 --boot" className="min-w-0">
             <TerminalBoot lines={LLMGUARDT2_LINES} title="llmguardt2 — AI security framework" onComplete={() => setDone1(true)} />
           </TerminalWindow>
-
-          {/* Center HUD — hidden on mobile, shown on lg+ */}
-          <div className="hidden lg:flex flex-col items-center gap-4">
-            <HUDProfile size="lg" />
-          </div>
-
-          <TerminalWindow title="ash@badash99:~$ ./cloudguard --boot" className="min-w-0 w-full min-h-[320px]">
+          <TerminalWindow title="ash@badash99:~$ ./cloudguard --boot" className="min-w-0">
             <TerminalBoot lines={CLOUDGUARD_LINES} title="cloudguard — cloud security scanner" onComplete={() => setDone2(true)} />
           </TerminalWindow>
-        </div>
-
-        {/* Mobile HUD — shown below terminals on small screens */}
-        <div className="flex lg:hidden justify-center mt-6">
-          <HUDProfile size="sm" />
         </div>
 
         <AnimatePresence>
@@ -61,7 +49,7 @@ export function HeroSection() {
             >
               <Link
                 href="/playground"
-                className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-mono font-bold text-sm rounded hover:bg-blue-500 transition-all shadow-glow-green group"
+                className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-mono font-bold text-sm rounded hover:bg-blue-500 transition-all group"
               >
                 <Shield size={16} />
                 Enter Playground
@@ -104,7 +92,6 @@ export function HeroSection() {
         </AnimatePresence>
       </div>
 
-      {/* Scroll indicator */}
       <AnimatePresence>
         {bootDone && (
           <motion.div

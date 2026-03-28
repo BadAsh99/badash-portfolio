@@ -13,29 +13,29 @@ export interface BootLine {
 }
 
 export const LLMGUARDT2_LINES: BootLine[] = [
-  { text: "LLMGUARDT2 // AI SECURITY FRAMEWORK", delay: 0, color: "text-terminal-green" },
-  { text: "OWASP LLM Top 10... 35 payloads", delay: 350, color: "text-terminal-text", suffix: "  [ARMED]", suffixColor: "text-terminal-cyan" },
-  { text: "Semantic injection detector... 0.75 threshold", delay: 750, color: "text-terminal-text", suffix: "  [ACTIVE]", suffixColor: "text-terminal-green" },
-  { text: "Red-team engine... Claude / GPT-4", delay: 1100, color: "text-terminal-text", suffix: "  [READY]", suffixColor: "text-terminal-green" },
-  { text: "Breach simulator... injection / jailbreak / DoS", delay: 1450, color: "text-terminal-text", suffix: "  [LOADED]", suffixColor: "text-terminal-cyan" },
-  { text: "Anthropic API... authenticated", delay: 1750, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
+  { text: "LLMGUARDT2 // AI SECURITY", delay: 0, color: "text-terminal-green" },
+  { text: "OWASP LLM Top 10 · 35 payloads", delay: 350, color: "text-terminal-text", suffix: "  [ARMED]", suffixColor: "text-terminal-cyan" },
+  { text: "Semantic injection detector", delay: 750, color: "text-terminal-text", suffix: "  [ACTIVE]", suffixColor: "text-terminal-green" },
+  { text: "Red-team engine · Claude / GPT-4", delay: 1100, color: "text-terminal-text", suffix: "  [READY]", suffixColor: "text-terminal-green" },
+  { text: "Breach simulator · inject/jailbreak", delay: 1450, color: "text-terminal-text", suffix: "  [LOADED]", suffixColor: "text-terminal-cyan" },
+  { text: "Anthropic API · authenticated", delay: 1750, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
   { text: "", delay: 2000, color: "text-terminal-text" },
   { text: "ASH CLEMENTS", delay: 2200, color: "text-terminal-green", big: true },
-  { text: "AI RED-TEAMER  //  HACKER  //  BUILDER", delay: 2450, color: "text-terminal-cyan" },
+  { text: "AI RED-TEAMER · HACKER · BUILDER", delay: 2450, color: "text-terminal-cyan" },
   { text: "", delay: 2550, color: "text-terminal-text" },
-  { text: "Breaking AI systems before bad actors do.", delay: 2650, color: "text-terminal-muted" },
+  { text: "Breaking AI before bad actors do.", delay: 2650, color: "text-terminal-muted" },
 ];
 
 export const CLOUDGUARD_LINES: BootLine[] = [
-  { text: "CLOUDGUARD // CLOUD SECURITY SCANNER", delay: 200, color: "text-terminal-green" },
-  { text: "AWS IAM misconfiguration scanner...", delay: 550, color: "text-terminal-text", suffix: "  [ARMED]", suffixColor: "text-terminal-cyan" },
-  { text: "Azure RBAC privilege escalation...", delay: 950, color: "text-terminal-text", suffix: "  [ACTIVE]", suffixColor: "text-terminal-green" },
-  { text: "GCP service account auditor...", delay: 1300, color: "text-terminal-text", suffix: "  [READY]", suffixColor: "text-terminal-green" },
-  { text: "S3 public exposure detector...", delay: 1600, color: "text-terminal-text", suffix: "  [LOADED]", suffixColor: "text-terminal-cyan" },
-  { text: "Zero-trust policy analyzer...", delay: 1900, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
+  { text: "CLOUDGUARD // CLOUD SECURITY", delay: 200, color: "text-terminal-green" },
+  { text: "AWS IAM misconfiguration scan", delay: 550, color: "text-terminal-text", suffix: "  [ARMED]", suffixColor: "text-terminal-cyan" },
+  { text: "Azure RBAC privilege escalation", delay: 950, color: "text-terminal-text", suffix: "  [ACTIVE]", suffixColor: "text-terminal-green" },
+  { text: "GCP service account auditor", delay: 1300, color: "text-terminal-text", suffix: "  [READY]", suffixColor: "text-terminal-green" },
+  { text: "S3 public exposure detector", delay: 1600, color: "text-terminal-text", suffix: "  [LOADED]", suffixColor: "text-terminal-cyan" },
+  { text: "Zero-trust policy analyzer", delay: 1900, color: "text-terminal-text", suffix: "  [OK]", suffixColor: "text-terminal-green" },
   { text: "", delay: 2100, color: "text-terminal-text" },
   { text: "PALO ALTO NETWORKS", delay: 2300, color: "text-terminal-green", big: true },
-  { text: "SR. SASE CONSULTANT  //  PRISMA ACCESS", delay: 2550, color: "text-terminal-cyan" },
+  { text: "SR. SASE · PRISMA ACCESS", delay: 2550, color: "text-terminal-cyan" },
   { text: "", delay: 2650, color: "text-terminal-text" },
   { text: "Securing cloud before it's too late.", delay: 2750, color: "text-terminal-muted" },
 ];
@@ -65,10 +65,10 @@ function TypewriterLine({ line, onDone }: { line: BootLine; onDone?: () => void 
   if (!line.text) return <div className="h-3" />;
 
   return (
-    <div className={cn("font-mono leading-snug break-words", line.big ? "text-lg md:text-xl font-bold" : "text-xs md:text-sm")}>
-      <span className={line.color}>{displayed}</span>
+    <div className={cn("font-mono leading-snug flex items-baseline gap-0 min-w-0", line.big ? "text-lg md:text-xl font-bold" : "text-xs md:text-sm")}>
+      <span className={cn("truncate shrink min-w-0", line.color)}>{displayed}</span>
       {showSuffix && line.suffix && (
-        <span className={line.suffixColor}>{line.suffix}</span>
+        <span className={cn("shrink-0 whitespace-nowrap", line.suffixColor)}>{line.suffix}</span>
       )}
     </div>
   );
