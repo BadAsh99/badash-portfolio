@@ -60,7 +60,7 @@ export function ProNavBar() {
             </Link>
           ))}
           <a
-            href="https://www.linkedin.com/in/ash-clements"
+            href="https://www.linkedin.com/in/ash-clements-75b62b22"
             target="_blank"
             rel="noopener noreferrer"
             className="font-sans text-sm px-4 py-1.5 rounded border border-[#0080ff]/40 text-[#0080ff] hover:bg-[#0080ff]/10 transition-colors"
@@ -93,7 +93,7 @@ export function ProNavBar() {
             </Link>
           ))}
           <a
-            href="https://www.linkedin.com/in/ash-clements"
+            href="https://www.linkedin.com/in/ash-clements-75b62b22"
             target="_blank"
             rel="noopener noreferrer"
             className="block font-sans text-sm py-2 text-[#0080ff]"

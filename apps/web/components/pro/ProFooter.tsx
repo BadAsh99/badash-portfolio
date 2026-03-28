@@ -6,7 +6,7 @@ export function ProFooter() {
           ♊ © {new Date().getFullYear()} Ash Clements · Phoenix, AZ
         </div>
         <div className="flex items-center gap-6 font-sans text-sm text-terminal-muted">
-          <a href="https://www.linkedin.com/in/ash-clements" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/in/ash-clements-75b62b22" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
             LinkedIn
           </a>
           <a href="https://github.com/BadAsh99" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">

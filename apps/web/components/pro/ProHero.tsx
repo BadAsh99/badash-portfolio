@@ -47,7 +47,7 @@ export function ProHero() {
 
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://www.linkedin.com/in/ash-clements"
+              href="https://www.linkedin.com/in/ash-clements-75b62b22"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 font-sans text-sm font-medium px-5 py-2.5 bg-[#0080ff] text-white rounded hover:bg-[#0066cc] transition-colors"
