@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Terminal, Shield, Cloud, Brain, Network, Award, Zap } from "lucide-react";
 import { TagBadge } from "@/components/shared/GlowBadge";
+import { HUDProfile } from "@/components/shared/HUDProfile";
 
 export const metadata: Metadata = {
   title: "About",
@@ -64,24 +65,29 @@ export default function AboutPage() {
       <section className="py-24 px-4 max-w-5xl mx-auto">
 
         {/* Header */}
-        <div className="mb-12">
-          <div className="font-mono text-terminal-green text-sm mb-3">{"// IDENTITY.TXT"}</div>
-          <h1 className="text-4xl md:text-5xl font-bold font-mono text-terminal-text leading-tight">
-            <span className="text-terminal-green">Ash Clements</span>
-          </h1>
-          <div className="font-mono text-terminal-cyan text-base mt-2">
-            Sr. Professional Services Consultant — SASE & AI Security · Palo Alto Networks
+        <div className="mb-12 flex flex-col md:flex-row items-start gap-10">
+          <div className="flex-1 min-w-0">
+            <div className="font-mono text-terminal-green text-sm mb-3">{"// IDENTITY.TXT"}</div>
+            <h1 className="text-4xl md:text-5xl font-bold font-mono text-terminal-text leading-tight">
+              <span className="text-terminal-green">Ash Clements</span>
+            </h1>
+            <div className="font-mono text-terminal-cyan text-base mt-2">
+              Sr. Professional Services Consultant — SASE & AI Security · Palo Alto Networks
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="flex items-center gap-1.5 font-mono text-xs text-terminal-green border border-terminal-green/30 px-3 py-1 rounded-full">
+                <Award size={11} /> PCNSE
+              </span>
+              <span className="flex items-center gap-1.5 font-mono text-xs text-terminal-muted border border-terminal-border px-3 py-1 rounded-full">
+                Phoenix, AZ
+              </span>
+              <span className="flex items-center gap-1.5 font-mono text-xs text-terminal-muted border border-terminal-border px-3 py-1 rounded-full">
+                ECPI University
+              </span>
+            </div>
           </div>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <span className="flex items-center gap-1.5 font-mono text-xs text-terminal-green border border-terminal-green/30 px-3 py-1 rounded-full">
-              <Award size={11} /> PCNSE
-            </span>
-            <span className="flex items-center gap-1.5 font-mono text-xs text-terminal-muted border border-terminal-border px-3 py-1 rounded-full">
-              Phoenix, AZ
-            </span>
-            <span className="flex items-center gap-1.5 font-mono text-xs text-terminal-muted border border-terminal-border px-3 py-1 rounded-full">
-              ECPI University
-            </span>
+          <div className="shrink-0 flex justify-center md:justify-end">
+            <HUDProfile size="sm" />
           </div>
         </div>
 

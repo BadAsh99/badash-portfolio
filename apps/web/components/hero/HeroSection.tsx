@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { TerminalBoot, LLMGUARDT2_LINES, CLOUDGUARD_LINES } from "./TerminalBoot";
 import { TerminalWindow } from "@/components/shared/TerminalWindow";
+import { HUDProfile } from "@/components/shared/HUDProfile";
 import { ArrowRight, Shield, BookOpen } from "lucide-react";
 
 export function HeroSection() {
@@ -28,14 +29,26 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="relative z-10 w-full max-w-6xl mx-auto">
+        {/* 3-column hero: terminal | HUD | terminal */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-4 items-center">
           <TerminalWindow title="ash@badash99:~$ ./llmguardt2 --boot" className="min-w-0 w-full min-h-[320px]">
             <TerminalBoot lines={LLMGUARDT2_LINES} title="llmguardt2 — AI security framework" onComplete={() => setDone1(true)} />
           </TerminalWindow>
+
+          {/* Center HUD — hidden on mobile, shown on lg+ */}
+          <div className="hidden lg:flex flex-col items-center gap-4">
+            <HUDProfile size="lg" />
+          </div>
+
           <TerminalWindow title="ash@badash99:~$ ./cloudguard --boot" className="min-w-0 w-full min-h-[320px]">
             <TerminalBoot lines={CLOUDGUARD_LINES} title="cloudguard — cloud security scanner" onComplete={() => setDone2(true)} />
           </TerminalWindow>
+        </div>
+
+        {/* Mobile HUD — shown below terminals on small screens */}
+        <div className="flex lg:hidden justify-center mt-6">
+          <HUDProfile size="sm" />
         </div>
 
         <AnimatePresence>
@@ -72,7 +85,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
+              className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
             >
               {[
                 { label: "OWASP LLM", value: "Top 10", sub: "Full coverage" },
