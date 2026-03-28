@@ -17,8 +17,8 @@ export function HeroSection() {
     <section className="min-h-screen flex flex-col items-center justify-center px-4 pt-14 relative overflow-hidden">
       {/* Floating orbs */}
       <div className="absolute rounded-full animate-float-slow pointer-events-none" style={{ top: "-8rem", left: "-8rem", width: "600px", height: "600px", background: "radial-gradient(circle, rgba(0,102,255,0.35) 0%, transparent 70%)", filter: "blur(80px)", willChange: "transform" }} />
-      <div className="absolute rounded-full animate-float-medium pointer-events-none" style={{ bottom: "-10rem", right: "-5rem", width: "500px", height: "500px", background: "radial-gradient(circle, rgba(220,0,0,0.28) 0%, transparent 70%)", filter: "blur(80px)", willChange: "transform" }} />
-      <div className="absolute rounded-full animate-float-fast pointer-events-none" style={{ top: "33%", right: "25%", width: "320px", height: "320px", background: "radial-gradient(circle, rgba(0,80,255,0.18) 0%, transparent 70%)", filter: "blur(60px)", willChange: "transform" }} />
+      <div className="absolute rounded-full animate-float-medium pointer-events-none" style={{ bottom: "-2rem", right: "-4rem", width: "520px", height: "520px", background: "radial-gradient(circle, rgba(220,0,0,0.38) 0%, transparent 70%)", filter: "blur(80px)", willChange: "transform" }} />
+      <div className="absolute rounded-full animate-float-fast pointer-events-none" style={{ top: "35%", right: "22%", width: "320px", height: "320px", background: "radial-gradient(circle, rgba(0,80,255,0.18) 0%, transparent 70%)", filter: "blur(60px)", willChange: "transform" }} />
 
       {/* Grid overlay */}
       <div
