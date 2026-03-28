@@ -9,14 +9,14 @@ export const metadata: Metadata = {
     template: "%s | BadAsh Security Lab",
   },
   description:
-    "AI security playground, OWASP LLM Top 10 scanner, and portfolio of Ash Clements — Sr. SASE & AI Security Consultant at Palo Alto Networks.",
-  keywords: ["AI Security", "LLM Security", "OWASP", "Prompt Injection", "SASE", "Palo Alto Networks", "Red Team"],
-  authors: [{ name: "Ash Clements" }],
+    "AI security playground, OWASP LLM Top 10 scanner, and tools by Bash99 — SASE, SaaS security, and AI runtime security.",
+  keywords: ["AI Security", "LLM Security", "OWASP", "Prompt Injection", "SASE", "SaaS Security", "Red Team"],
+  authors: [{ name: "Bash99" }],
   openGraph: {
     type: "website",
     siteName: "BadAsh Security Lab",
     title: "BadAsh Security Lab",
-    description: "Live AI security playground + OWASP LLM Top 10 scanner by Ash Clements",
+    description: "Live AI security playground + OWASP LLM Top 10 scanner by Bash99",
   },
   twitter: {
     card: "summary_large_image",

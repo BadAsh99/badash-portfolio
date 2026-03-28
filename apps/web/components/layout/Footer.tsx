@@ -8,7 +8,10 @@ export function Footer() {
         <div className="flex items-center gap-2">
           <Terminal size={14} className="text-terminal-green" />
           <span className="font-mono text-sm text-terminal-muted">
-            <span className="text-terminal-green">Ash Clements</span> — Sr. SASE & AI Security Consultant
+            <span className="text-terminal-green">Ash</span>
+            <span className="text-red-500 opacity-75"> C̷̡̛l̸̨͝ȩ̵͘m̷͝͠ȩ̴̛n̵͘͝t̷̡͘s̸͠</span>
+            {" — "}
+            <span className="opacity-50 tracking-tight">░▒ 0x[̴R̵̢̈́Ě̸D̴̡̾Ā̷C̷̈T̵͒Ě̴D̷̕]̵ ▒░</span>
           </span>
         </div>
         <div className="flex items-center gap-6 font-mono text-xs text-terminal-dim">

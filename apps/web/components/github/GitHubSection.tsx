@@ -71,7 +71,7 @@ export function GitHubSection() {
             <ExternalLink size={24} className="text-terminal-green group-hover:animate-glow-pulse" />
             <div>
               <div className="font-mono font-bold text-terminal-green text-glow-green">@BadAsh99</div>
-              <div className="font-mono text-xs text-terminal-muted">Ash Clements</div>
+              <div className="font-mono text-xs text-terminal-muted">Bash99</div>
             </div>
           </a>
           {profile && (

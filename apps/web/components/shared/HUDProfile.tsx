@@ -18,7 +18,7 @@ export function HUDProfile({ size = "lg" }: HUDProfileProps) {
       <div className="absolute inset-0 rounded-xl overflow-hidden">
         <Image
           src="/ash-profile.jpeg"
-          alt="Ash Clements — AI Security"
+          alt="Bash99 — AI Security"
           width={dim}
           height={dim}
           className="object-cover w-full h-full"

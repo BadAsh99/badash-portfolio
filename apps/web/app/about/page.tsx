@@ -5,7 +5,7 @@ import { HUDProfile } from "@/components/shared/HUDProfile";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Ash Clements — Sr. SASE & AI Security Consultant at Palo Alto Networks. PCNSE certified. Securing enterprise infrastructure for gas & oil, telecom, and Fortune 500.",
+  description: "Bash99 — SASE, SaaS & AI Security. PCNSE certified. Securing enterprise infrastructure for gas & oil, telecom, and Fortune 500.",
 };
 
 const domains = [
@@ -16,13 +16,13 @@ const domains = [
   },
   {
     icon: <Network size={16} />,
-    name: "SASE & PAN-OS",
-    items: ["Prisma Access", "GlobalProtect", "PAN-OS", "SD-WAN", "Zero Trust", "PCNSE"],
+    name: "SASE & SaaS Security",
+    items: ["SASE", "SaaS Security", "SD-WAN", "Zero Trust", "PCNSE", "GlobalProtect"],
   },
   {
     icon: <Cloud size={16} />,
     name: "Cloud Security",
-    items: ["Azure", "AWS", "GCP", "Terraform IaC", "CIS Benchmarks", "Prisma Cloud"],
+    items: ["Azure", "AWS", "GCP", "Terraform IaC", "CIS Benchmarks", "Cloud SIEM"],
   },
   {
     icon: <Shield size={16} />,
@@ -40,9 +40,9 @@ const stats = [
 
 const timeline = [
   {
-    role: "Sr. Professional Services Consultant",
-    company: "Palo Alto Networks",
-    detail: "SASE & AI Security · Prisma Access · Enterprise Deployment",
+    role: "SASE & AI Security Consultant",
+    company: "Enterprise Security",
+    detail: "SASE & AI Security · SaaS · Enterprise Deployment",
     current: true,
   },
   {
@@ -69,10 +69,10 @@ export default function AboutPage() {
           <div className="flex-1 min-w-0">
             <div className="font-mono text-terminal-green text-sm mb-3">{"// IDENTITY.TXT"}</div>
             <h1 className="text-4xl md:text-5xl font-bold font-mono text-terminal-text leading-tight">
-              <span className="text-terminal-green">Ash Clements</span>
+              <span className="text-terminal-green">Bash99</span>
             </h1>
             <div className="font-mono text-terminal-cyan text-base mt-2">
-              Sr. Professional Services Consultant — SASE & AI Security · Palo Alto Networks
+              SASE & AI Security · SaaS · Builder
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               <span className="flex items-center gap-1.5 font-mono text-xs text-terminal-green border border-terminal-green/30 px-3 py-1 rounded-full">
@@ -117,9 +117,9 @@ export default function AboutPage() {
               </span>
             </p>
             <p>
-              At Palo Alto Networks, I deploy <span className="text-terminal-cyan">Prisma Access</span> at enterprise scale.
               Zero Trust architecture isn{"'"}t a framework to me — it{"'"}s production code running across some of the most
-              complex, high-stakes environments on the planet. I{"'"}ve seen what breaks. I{"'"}ve seen what holds.
+              complex, high-stakes environments on the planet. SASE deployments at enterprise scale: carrier-grade telecom,
+              gas {"&"} oil critical infrastructure, Fortune 500. I{"'"}ve seen what breaks. I{"'"}ve seen what holds.
             </p>
             <p>
               By night, I{"'"}m building what the industry doesn{"'"}t have yet: AI security tooling that applies the same
@@ -199,7 +199,7 @@ export default function AboutPage() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 glass-card px-4 py-2 rounded hover:border-terminal-cyan hover:text-terminal-cyan transition-colors"
           >
-            LinkedIn — Ash Clements ↗
+            LinkedIn — Bash99 ↗
           </a>
           <a
             href="/blog"
