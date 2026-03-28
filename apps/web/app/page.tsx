@@ -2,7 +2,6 @@ import { HeroSection } from "@/components/hero/HeroSection";
 import { PlaygroundSection } from "@/components/playground/PlaygroundSection";
 import { SandboxSection } from "@/components/sandbox/SandboxSection";
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
-import { GitHubSection } from "@/components/github/GitHubSection";
 import { SecurityFeed } from "@/components/security/SecurityFeed";
 
 export default function HomePage() {
@@ -17,8 +16,6 @@ export default function HomePage() {
       <ProjectsSection />
       <div className="border-t border-terminal-border" />
       <SecurityFeed />
-      <div className="border-t border-terminal-border" />
-      <GitHubSection />
     </>
   );
 }
