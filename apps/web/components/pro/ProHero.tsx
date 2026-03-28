@@ -1,4 +1,3 @@
-import { HUDProfile } from "@/components/shared/HUDProfile";
 import { Award, MapPin, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
@@ -63,10 +62,6 @@ export function ProHero() {
           </div>
         </div>
 
-        {/* HUD Image */}
-        <div className="shrink-0 flex justify-center md:justify-end">
-          <HUDProfile size="sm" />
-        </div>
       </div>
 
       {/* Stats bar */}
