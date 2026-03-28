@@ -65,10 +65,10 @@ function TypewriterLine({ line, onDone }: { line: BootLine; onDone?: () => void 
   if (!line.text) return <div className="h-3" />;
 
   return (
-    <div className={cn("font-mono leading-snug flex items-baseline gap-0 min-w-0", line.big ? "text-lg md:text-xl font-bold" : "text-xs md:text-sm")}>
-      <span className={cn("truncate shrink min-w-0", line.color)}>{displayed}</span>
+    <div className={cn("font-mono leading-snug w-full whitespace-nowrap overflow-hidden", line.big ? "text-lg md:text-xl font-bold" : "text-xs md:text-sm")}>
+      <span className={line.color}>{displayed}</span>
       {showSuffix && line.suffix && (
-        <span className={cn("shrink-0 whitespace-nowrap", line.suffixColor)}>{line.suffix}</span>
+        <span className={line.suffixColor}>{line.suffix}</span>
       )}
     </div>
   );
