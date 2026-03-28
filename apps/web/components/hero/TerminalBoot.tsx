@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export interface BootLine {
@@ -43,10 +43,12 @@ export const CLOUDGUARD_LINES: BootLine[] = [
 function TypewriterLine({ line, onDone }: { line: BootLine; onDone?: () => void }) {
   const [displayed, setDisplayed] = useState("");
   const [showSuffix, setShowSuffix] = useState(false);
+  const onDoneRef = useRef(onDone);
+  onDoneRef.current = onDone;
 
   useEffect(() => {
     if (!line.text) {
-      onDone?.();
+      onDoneRef.current?.();
       return;
     }
     let i = 0;
@@ -55,12 +57,12 @@ function TypewriterLine({ line, onDone }: { line: BootLine; onDone?: () => void 
       setDisplayed(line.text.slice(0, ++i));
       if (i >= line.text.length) {
         clearInterval(interval);
-        if (line.suffix) setTimeout(() => { setShowSuffix(true); onDone?.(); }, 100);
-        else onDone?.();
+        if (line.suffix) setTimeout(() => { setShowSuffix(true); onDoneRef.current?.(); }, 100);
+        else onDoneRef.current?.();
       }
     }, speed);
     return () => clearInterval(interval);
-  }, [line, onDone]);
+  }, [line]);
 
   if (!line.text) return <div className="h-3" />;
 
