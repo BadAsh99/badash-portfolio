@@ -21,7 +21,7 @@ export function HeroSection() {
 
       {/* Grid overlay */}
       <div
-        className="absolute inset-0 opacity-[0.025]"
+        className="absolute inset-0 opacity-[0.025] pointer-events-none"
         style={{
           backgroundImage: "linear-gradient(#0080ff 1px, transparent 1px), linear-gradient(90deg, #0080ff 1px, transparent 1px)",
           backgroundSize: "50px 50px",
@@ -30,10 +30,10 @@ export function HeroSection() {
 
       <div className="relative z-10 w-full max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <TerminalWindow title="ash@badash99:~$ ./llmguardt2 --boot" className="min-w-0 w-full">
+          <TerminalWindow title="ash@badash99:~$ ./llmguardt2 --boot" className="min-w-0 w-full min-h-[320px]">
             <TerminalBoot lines={LLMGUARDT2_LINES} title="llmguardt2 — AI security framework" onComplete={() => setDone1(true)} />
           </TerminalWindow>
-          <TerminalWindow title="ash@badash99:~$ ./cloudguard --boot" className="min-w-0 w-full">
+          <TerminalWindow title="ash@badash99:~$ ./cloudguard --boot" className="min-w-0 w-full min-h-[320px]">
             <TerminalBoot lines={CLOUDGUARD_LINES} title="cloudguard — cloud security scanner" onComplete={() => setDone2(true)} />
           </TerminalWindow>
         </div>
