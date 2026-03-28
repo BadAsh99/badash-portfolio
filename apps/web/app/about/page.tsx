@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Terminal, Shield, Cloud, Brain, Network, Award, Zap } from "lucide-react";
 import { TagBadge } from "@/components/shared/GlowBadge";
 import { HUDProfile } from "@/components/shared/HUDProfile";
+import { ReportLinks } from "@/components/shared/ReportLinks";
 
 export const metadata: Metadata = {
   title: "About",
@@ -194,6 +195,7 @@ export default function AboutPage() {
         </div>
 
       </section>
+      <ReportLinks />
     </div>
   );
 }

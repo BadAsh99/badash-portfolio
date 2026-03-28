@@ -3,6 +3,7 @@ import { ProHero } from "@/components/pro/ProHero";
 import { ExperienceTimeline } from "@/components/pro/ExperienceTimeline";
 import { SkillsGrid } from "@/components/pro/SkillsGrid";
 import { FeaturedProjectsPro } from "@/components/pro/FeaturedProjectsPro";
+import { ValuesSection } from "@/components/pro/ValuesSection";
 import { ContactCTA } from "@/components/pro/ContactCTA";
 
 export const metadata: Metadata = {
@@ -16,6 +17,7 @@ export default function ProHomePage() {
       <ExperienceTimeline />
       <SkillsGrid />
       <FeaturedProjectsPro />
+      <ValuesSection />
       <ContactCTA />
     </>
   );
