@@ -1,0 +1,44 @@
+---
+title: "Why SASE and AI Security Are the Same Problem"
+date: "2026-03-28"
+description: "The architecture patterns that made Zero Trust work for enterprise networks are exactly what AI runtime security needs. Here's why the industry is about to figure that out."
+tags: ["SASE", "AI Security", "Zero Trust", "Architecture"]
+draft: false
+---
+
+The first time I deployed a Zero Trust architecture for a Fortune 500 client, the hardest part wasn't the technology. It was convincing the security team that *every connection is untrusted by default* — including internal ones.
+
+That mental shift took months.
+
+We're about to have the exact same conversation about AI.
+
+## The Pattern Repeats
+
+In network security, the old model was perimeter-based. Castle and moat. Get inside the wall, you're trusted. We spent a decade learning that was wrong.
+
+SASE solved it by pushing policy enforcement to the edge, inspecting every session, treating identity and context as the control plane — not network location.
+
+AI security in 2026 looks like network security in 2015. Most organizations are running LLMs with implicit trust. Prompts go in, outputs come out, and nobody's inspecting what's happening in between.
+
+## What Runtime Security Actually Means
+
+When I talk about AI runtime security, I mean the same thing I mean for network runtime security:
+
+- **Continuous inspection** — every inference request is a session to be evaluated
+- **Behavioral baselines** — what does normal look like, and what's anomalous
+- **Policy enforcement at the edge** — before the model responds, not after the damage is done
+- **Cross-service visibility** — attacks chain across services, detection has to as well
+
+The OWASP LLM Top 10 reads like an early OWASP Web Top 10. Prompt injection is SQL injection. Insecure output handling is XSS. We've solved these classes of problems before — the primitives transfer.
+
+## Where the Industry Is Heading
+
+The vendors are catching up. Runtime AI security is becoming a product category. But the practitioners who understand *why* the architecture works — not just that it works — are going to have the advantage.
+
+That's the signal worth paying attention to.
+
+> The engineers who understood Zero Trust at the architecture level — not just as a vendor checkbox — are the ones running enterprise security programs today. The same is coming for AI.
+
+---
+
+*Signal / Noise is a practitioner-focused series on AI security and enterprise architecture. No vendor pitches, no theoretical frameworks — just what's actually working in the field.*
