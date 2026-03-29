@@ -27,20 +27,6 @@ export const experience = [
     current: false,
   },
   {
-    role: "Owner / Principal",
-    company: "ProfilesPC",
-    period: "2001 — 2008",
-    location: "Richmond, VA",
-    focus: "Web development · Security consulting · Network infrastructure",
-    highlights: [
-      "Founded after the 2001 tech bubble collapse — built from scratch, no capital, no investors",
-      "Full-stack shop: web design, graphic design, security hardening, and network infrastructure — clients included VCU Art School, Carytown retail, and ecommerce",
-      "Grew to $125k/yr; sold stake 2008",
-      "Ran network buildouts alongside web work — switches, firewalls, VPNs — the beginning of what became a career in enterprise infrastructure",
-    ],
-    current: false,
-  },
-  {
     role: "Manager, Channel Development",
     company: "Allied Telecom Group",
     period: "2015 — 2016",
@@ -86,6 +72,20 @@ export const experience = [
     highlights: [
       "Carrier-grade networking at a regional CLEC — where enterprise networking fundamentals got built",
       "Earned CCNA certification during this role",
+    ],
+    current: false,
+  },
+  {
+    role: "Owner / Principal",
+    company: "ProfilesPC",
+    period: "2001 — 2008",
+    location: "Richmond, VA",
+    focus: "Web development · Security consulting · Network infrastructure",
+    highlights: [
+      "Founded after the 2001 tech bubble collapse — built from scratch, no capital, no investors",
+      "Full-stack shop: web design, graphic design, security hardening, and network infrastructure — clients included VCU Art School, Carytown retail, and ecommerce",
+      "Grew to $125k/yr; sold stake 2008",
+      "Ran network buildouts alongside web work — switches, firewalls, VPNs — the beginning of what became a career in enterprise infrastructure",
     ],
     current: false,
   },
