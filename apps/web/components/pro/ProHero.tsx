@@ -48,7 +48,7 @@ export function ProHero() {
             In 2001 the tech bubble burst and I got laid off from a $250k role at GE Spacenet.
             Moved back to Richmond with nothing. Taught myself HTML, CSS, Flash, and Java from scratch,
             built a portfolio, and landed clients — VCU Art School, Carytown storefronts, ecommerce sites.
-            Started a web and security firm, $125k working from home. That{"'"}s also where I first saw
+            Started ProfilesPC — web, security, and network consulting — $125k working from home. That{"'"}s also where I first saw
             automation: Dreamweaver added FTP and I could push a site live without touching a terminal.
             A manual process, gone. That thought never left.
           </p>

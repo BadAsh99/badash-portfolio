@@ -129,8 +129,8 @@ export default function AboutPage() {
                 So I downloaded pirated copies of Dreamweaver and Flash because I couldn{"'"}t afford Adobe,
                 and taught myself HTML, CSS, Java, and Flash from scratch.
               </span>{" "}
-              Built a portfolio. Landed VCU Art School, shops in Carytown, ecommerce clients. Started a Web, Graphic,
-              and Security firm out of my home in Richmond — $125k a year, working for myself.
+              Built a portfolio. Landed VCU Art School, shops in Carytown, ecommerce clients. Started ProfilesPC —
+              web, graphic design, security, and network consulting out of my home in Richmond — $125k a year, working for myself.
               First thing I did when the money came in was buy a legal copy of the Adobe suite.
             </p>
             <p>
