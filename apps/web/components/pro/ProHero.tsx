@@ -38,6 +38,11 @@ export function ProHero() {
             </span>
           </div>
 
+          <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-4">
+            In elementary school, my class got a Texas Instruments computer. Every other kid played games.
+            I wrote BASIC — making the screen change colors, making it produce sounds. The teacher called it
+            wasting time. That was 1979. I{"'"}m still at it.
+          </p>
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-8">
             Senior security consultant specializing in enterprise SASE deployments and AI security architecture.
             At Palo Alto Networks, I lead complex Prisma Access implementations for Fortune 500 organizations

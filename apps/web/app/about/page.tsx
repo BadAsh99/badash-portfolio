@@ -110,6 +110,11 @@ export default function AboutPage() {
           </div>
           <div className="font-mono text-sm text-terminal-text space-y-4 leading-relaxed">
             <p>
+              Elementary school. Texas Instruments computer in the classroom. Every other kid was playing games.{" "}
+              <span className="text-terminal-green font-semibold">I was writing BASIC — making the screen change colors, making it produce sounds.</span>{" "}
+              The teacher pulled me aside for wasting valuable time on the computer. That was 1979. Nothing has changed.
+            </p>
+            <p>
               I{"'"}ve hardened the networks that move energy across continents, route the calls of hundreds of millions,
               and process the transactions of global finance.{" "}
               <span className="text-terminal-green font-semibold">
