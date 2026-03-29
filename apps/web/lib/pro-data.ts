@@ -47,7 +47,7 @@ export const experience = [
     highlights: [
       "Founded after the 2001 tech bubble collapse — built from scratch, no capital, no investors",
       "Full-stack shop: web design, graphic design, security hardening, and network infrastructure — clients included VCU Art School, Carytown retail, and ecommerce",
-      "Grew to $125k/yr operating from home in Richmond; dissolved 2008",
+      "Grew to $125k/yr operating from home in Richmond; sold stake 2008",
       "Ran network buildouts alongside web work — switches, firewalls, VPNs — the beginning of what became a career in enterprise infrastructure",
     ],
     current: false,
