@@ -101,6 +101,19 @@ export const experience = [
     ],
     current: false,
   },
+  {
+    role: "Field Engineer — Y2K Remediation",
+    company: "Unisys",
+    period: "1997 — 1999",
+    location: "Nationwide",
+    focus: "Y2K remediation · Federal government · Social Security Administration",
+    highlights: [
+      "Part of the Unisys team that executed the Y2K fix rollout across the entire Social Security Administration",
+      "Fly-and-fix field deployment — visited nearly every state in the US over two years",
+      "One of the largest coordinated government IT rollouts in US history; Thursday-to-Monday travel cadence at peak",
+    ],
+    current: false,
+  },
 ];
 
 export const certifications = [
