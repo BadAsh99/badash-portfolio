@@ -41,6 +41,43 @@ export const experience = [
     current: false,
   },
   {
+    role: "Manager, Channel Development",
+    company: "Allied Telecom Group",
+    period: "2015 — 2016",
+    location: "Richmond, VA",
+    focus: "Telecom infrastructure · Channel sales · Partner development",
+    highlights: [
+      "Channel sales and partner development at a regional telecom provider",
+      "Leveraged deep network engineering background to bridge technical and commercial conversations",
+    ],
+    current: false,
+  },
+  {
+    role: "Sr. Network Security Engineer",
+    company: "Independent Network Consultants",
+    period: "2012 — 2015",
+    location: "Nationwide",
+    focus: "Managed security services · Network infrastructure · Enterprise clients",
+    highlights: [
+      "Senior network security engineering at a dedicated MSP — longest tenure in the gap years",
+      "Security hardening, network design, and infrastructure builds across enterprise clients",
+      "Deepened the enterprise consulting skillset that feeds directly into current PAN work",
+    ],
+    current: false,
+  },
+  {
+    role: "Sr. Network Security Engineer",
+    company: "FDA",
+    period: "2010 — 2012",
+    location: "Washington, D.C.",
+    focus: "Federal network security · Government infrastructure · Compliance",
+    highlights: [
+      "Senior network security engineering within a federal regulatory agency",
+      "Security-conscious, compliance-driven infrastructure with federal-grade requirements",
+    ],
+    current: false,
+  },
+  {
     role: "Network Technician",
     company: "Cavalier Telephone",
     period: "2009 — 2010",
@@ -49,19 +86,6 @@ export const experience = [
     highlights: [
       "Carrier-grade networking at a regional CLEC — where enterprise networking fundamentals got built",
       "Earned CCNA certification during this role",
-      "Hands-on with the infrastructure that moves real traffic at scale",
-    ],
-    current: false,
-  },
-  {
-    role: "Career Sabbatical",
-    company: "Personal / Travel",
-    period: "2010 — 2015",
-    location: "—",
-    focus: "Intentional break · Independent consulting · Personal development",
-    highlights: [
-      "Stepped back from full-time work to travel and reset",
-      "Periodic independent consulting engagements during this period",
     ],
     current: false,
   },
