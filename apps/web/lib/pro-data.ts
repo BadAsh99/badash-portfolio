@@ -102,6 +102,19 @@ export const experience = [
     current: false,
   },
   {
+    role: "Licensed Real Estate Agent",
+    company: "Real Estate",
+    period: "1994 — 1997",
+    location: "Richmond, VA",
+    focus: "Residential sales · Client relations · Business development",
+    highlights: [
+      "Started at 22 specifically to get away from computers — made $10k/month within the first year",
+      "The escape didn't last: local real estate firms discovered he knew networks and kept their offices running, and pulled him back into tech",
+      "Three years of sales, negotiation, and client management — skills that quietly inform every enterprise engagement since",
+    ],
+    current: false,
+  },
+  {
     role: "Field Engineer — Y2K Remediation",
     company: "Unisys",
     period: "1997 — 1999",
