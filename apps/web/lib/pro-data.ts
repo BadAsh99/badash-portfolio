@@ -109,7 +109,7 @@ export const experience = [
     focus: "Residential sales · Client relations · Business development",
     highlights: [
       "Started at 22 specifically to get away from computers — made $10k/month within the first year",
-      "The escape didn't last: local real estate firms discovered he knew networks and kept their offices running, and pulled him back into tech",
+      "The escape didn't last: local real estate firms discovered I knew networks, kept their offices running, and pulled me back into tech",
       "Three years of sales, negotiation, and client management — skills that quietly inform every enterprise engagement since",
     ],
     current: false,
