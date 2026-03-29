@@ -41,9 +41,22 @@ export const experience = [
     current: false,
   },
   {
+    role: "Network Technician",
+    company: "Cavalier Telephone",
+    period: "2009 — 2010",
+    location: "Richmond, VA",
+    focus: "ISP / CLEC operations · Carrier networking · Network engineering",
+    highlights: [
+      "Carrier-grade networking at a regional CLEC — where enterprise networking fundamentals got built",
+      "Earned CCNA certification during this role",
+      "Hands-on with the infrastructure that moves real traffic at scale",
+    ],
+    current: false,
+  },
+  {
     role: "Career Sabbatical",
     company: "Personal / Travel",
-    period: "2008 — 2015",
+    period: "2010 — 2015",
     location: "—",
     focus: "Intentional break · Independent consulting · Personal development",
     highlights: [
