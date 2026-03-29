@@ -41,7 +41,7 @@ export function ProHero() {
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-4">
             I got my first job at 15 — waiting tables, helping the family, buying computer parts with what was left.
             Never stopped working. By my early twenties I was so burned out on tech I got my real estate license
-            and made $10k a month deliberately staying away from computers. Lasted three years before the industry
+            and made a six-figure income deliberately staying away from computers. Lasted three years before the industry
             hunted me down anyway: brokerages kept asking me to fix their networks, and I was too good at it to say no.
           </p>
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-4">
@@ -54,7 +54,7 @@ export function ProHero() {
             That year hit hard on multiple fronts. Building something wasn{"'"}t just about the money —
             it was about having something to show up for every day.
             Downloaded pirated Dreamweaver and Flash, taught myself HTML, CSS, Flash, and Java from scratch,
-            built ProFilesPC from zero — web, security, and network consulting — $125k working from home.
+            built ProFilesPC from zero — web, security, and network consulting — six figures working from home.
             First paycheck went to a legal Adobe license. That{"'"}s still how I operate: figure it out,
             put it back together better, pay it forward when you can.
           </p>

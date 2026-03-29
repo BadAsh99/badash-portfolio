@@ -130,7 +130,7 @@ export default function AboutPage() {
             </p>
             <p>
               By my early twenties I was so burned out on computers I deliberately walked away.{" "}
-              <span className="text-terminal-cyan">Got my real estate license. Made $10k a month.</span>{" "}
+              <span className="text-terminal-cyan">Got my real estate license. Made six figures.</span>{" "}
               Thought I was out. Then the brokerages figured out I could keep their networks running
               and dragged me back in — and honestly, they loved me for it. Computers weren{"'"}t done with me.
               Three years in real estate taught me how to sell, negotiate, and read a room.
@@ -143,7 +143,7 @@ export default function AboutPage() {
               One of the largest coordinated government IT deployments in history. I was on the ground for it.
             </p>
             <p>
-              2001. Tech bubble burst. Got laid off from a $250k job at GE Spacenet in Northern VA — living the life one day,
+              2001. Tech bubble burst. Got laid off from a six-figure role at GE Spacenet in Northern VA — living the life one day,
               back in Richmond with nothing the next. That year hit hard on multiple fronts.{" "}
               <span className="text-terminal-cyan">Building something wasn{"'"}t just about the money — it was about having something to show up for every day.</span>{" "}
               Unemployment running out, no plan.{" "}
@@ -152,7 +152,7 @@ export default function AboutPage() {
                 and taught myself HTML, CSS, Java, and Flash from scratch.
               </span>{" "}
               Built a portfolio. Landed VCU Art School, shops in Carytown, ecommerce clients. Started ProFilesPC —
-              web, graphic design, security, and network consulting — $125k working from home.
+              web, graphic design, security, and network consulting — six figures working from home.
               First thing I did when the money came in was buy a legal copy of the Adobe suite.
             </p>
             <p>

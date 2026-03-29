@@ -84,7 +84,7 @@ export const experience = [
     highlights: [
       "Founded after the 2001 tech bubble collapse — built from scratch, no capital, no investors",
       "Full-stack shop: web design, graphic design, security hardening, and network infrastructure — clients included VCU Art School, Carytown retail, and ecommerce",
-      "Grew to $125k/yr; sold stake 2008",
+      "Grew to six figures; sold stake 2008",
       "Ran network buildouts alongside web work — switches, firewalls, VPNs — the beginning of what became a career in enterprise infrastructure",
     ],
     current: false,
@@ -121,7 +121,7 @@ export const experience = [
     location: "Richmond, VA",
     focus: "Residential sales · Client relations · Business development",
     highlights: [
-      "Started at 22 specifically to get away from computers — made $10k/month within the first year",
+      "Started at 22 specifically to get away from computers — hit six figures within the first year",
       "The escape didn't last: local real estate firms discovered I knew networks, kept their offices running, and pulled me back into tech",
       "Three years of sales, negotiation, and client management — skills that quietly inform every enterprise engagement since",
     ],
