@@ -144,7 +144,9 @@ export default function AboutPage() {
             </p>
             <p>
               2001. Tech bubble burst. Got laid off from a $250k job at GE Spacenet in Northern VA — living the life one day,
-              back in Richmond with nothing the next. Unemployment running out, no money, no plan.{" "}
+              back in Richmond with nothing the next. That year hit hard on multiple fronts.{" "}
+              <span className="text-terminal-cyan">Building something wasn{"'"}t just about the money — it was about having something to show up for every day.</span>{" "}
+              Unemployment running out, no plan.{" "}
               <span className="text-terminal-green font-semibold">
                 So I downloaded pirated copies of Dreamweaver and Flash because I couldn{"'"}t afford Adobe,
                 and taught myself HTML, CSS, Java, and Flash from scratch.

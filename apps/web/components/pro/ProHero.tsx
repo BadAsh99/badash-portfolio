@@ -51,6 +51,8 @@ export function ProHero() {
           </p>
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-8">
             2001: tech bubble burst, laid off from GE Spacenet, back in Richmond with nothing.
+            That year hit hard on multiple fronts. Building something wasn{"'"}t just about the money —
+            it was about having something to show up for every day.
             Downloaded pirated Dreamweaver and Flash, taught myself HTML, CSS, Flash, and Java from scratch,
             built ProfilesPC from zero — web, security, and network consulting — $125k working from home.
             First paycheck went to a legal Adobe license. That{"'"}s still how I operate: figure it out,
