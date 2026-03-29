@@ -41,9 +41,16 @@ export function ProHero() {
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-4">
             In elementary school, my class got a Texas Instruments computer. Every other kid played games.
             I wrote BASIC — making the screen change colors, making it produce sounds. The teacher called it
-            wasting time. That was 1979. I{"'"}m still at it. At home, my dad had one rule: if my brother
-            and I broke the OS — and we broke it constantly — we fixed it ourselves. No exceptions.
-            That{"'"}s still how I operate. Break things. Understand why. Put it back together better.
+            wasting time. That was 1979. At home, my dad had one rule: if my brother and I broke the OS —
+            and we broke it constantly — we fixed it ourselves. No exceptions. That{"'"}s still how I operate.
+          </p>
+          <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-8">
+            In 2001 the tech bubble burst and I got laid off from a $250k role at GE Spacenet.
+            Moved back to Richmond with nothing. Taught myself HTML, CSS, Flash, and Java from scratch,
+            built a portfolio, and landed clients — VCU Art School, Carytown storefronts, ecommerce sites.
+            Started a web and security firm, $125k working from home. That{"'"}s also where I first saw
+            automation: Dreamweaver added FTP and I could push a site live without touching a terminal.
+            A manual process, gone. That thought never left.
           </p>
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-8">
             Senior security consultant specializing in enterprise SASE deployments and AI security architecture.

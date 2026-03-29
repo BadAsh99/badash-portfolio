@@ -123,6 +123,23 @@ export default function AboutPage() {
               Break things. Understand why. Put it back together better.
             </p>
             <p>
+              2001. Tech bubble burst. Got laid off from a $250k job at GE Spacenet in Northern VA — living the life one day,
+              back in Richmond with my tail between my legs the next. Unemployment running out, no money, no plan.{" "}
+              <span className="text-terminal-green font-semibold">
+                So I downloaded pirated copies of Dreamweaver and Flash because I couldn{"'"}t afford Adobe,
+                and taught myself HTML, CSS, Java, and Flash from scratch.
+              </span>{" "}
+              Built a portfolio. Landed VCU Art School, shops in Carytown, ecommerce clients. Started a Web, Graphic,
+              and Security firm out of my home in Richmond — $125k a year, working for myself.
+              First thing I did when the money came in was buy a legal copy of the Adobe suite.
+            </p>
+            <p>
+              That{"'"}s also where I first encountered automation. Dreamweaver added FTP functionality — you could upload
+              a site directly to the hosting server from inside the software.{" "}
+              <span className="text-terminal-cyan">A manual process, automated.</span>{" "}
+              I remember thinking: that{"'"}s better. That thought never left.
+            </p>
+            <p>
               I{"'"}ve hardened the networks that move energy across continents, route the calls of hundreds of millions,
               and process the transactions of global finance.{" "}
               <span className="text-terminal-green font-semibold">
