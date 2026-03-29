@@ -77,7 +77,7 @@ export const experience = [
   },
   {
     role: "Owner / Principal",
-    company: "ProFilePC",
+    company: "ProFilesPC",
     period: "2001 — 2008",
     location: "Richmond, VA",
     focus: "Web development · Security consulting · Network infrastructure",
