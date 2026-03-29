@@ -54,7 +54,7 @@ export function ProHero() {
             That year hit hard on multiple fronts. Building something wasn{"'"}t just about the money —
             it was about having something to show up for every day.
             Downloaded pirated Dreamweaver and Flash, taught myself HTML, CSS, Flash, and Java from scratch,
-            built ProfilesPC from zero — web, security, and network consulting — $125k working from home.
+            built ProFilePC from zero — web, security, and network consulting — $125k working from home.
             First paycheck went to a legal Adobe license. That{"'"}s still how I operate: figure it out,
             put it back together better, pay it forward when you can.
           </p>

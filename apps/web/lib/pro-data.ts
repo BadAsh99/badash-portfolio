@@ -77,7 +77,7 @@ export const experience = [
   },
   {
     role: "Owner / Principal",
-    company: "ProfilesPC",
+    company: "ProFilePC",
     period: "2001 — 2008",
     location: "Richmond, VA",
     focus: "Web development · Security consulting · Network infrastructure",
@@ -102,19 +102,6 @@ export const experience = [
     current: false,
   },
   {
-    role: "Licensed Real Estate Agent",
-    company: "Real Estate",
-    period: "1994 — 1997",
-    location: "Richmond, VA",
-    focus: "Residential sales · Client relations · Business development",
-    highlights: [
-      "Started at 22 specifically to get away from computers — made $10k/month within the first year",
-      "The escape didn't last: local real estate firms discovered I knew networks, kept their offices running, and pulled me back into tech",
-      "Three years of sales, negotiation, and client management — skills that quietly inform every enterprise engagement since",
-    ],
-    current: false,
-  },
-  {
     role: "Field Engineer — Y2K Remediation",
     company: "Unisys",
     period: "1997 — 1999",
@@ -124,6 +111,19 @@ export const experience = [
       "Part of the Unisys team that executed the Y2K fix rollout across the entire Social Security Administration",
       "Fly-and-fix field deployment — visited nearly every state in the US over two years",
       "One of the largest coordinated government IT rollouts in US history; Thursday-to-Monday travel cadence at peak",
+    ],
+    current: false,
+  },
+  {
+    role: "Licensed Real Estate Agent",
+    company: "Real Estate",
+    period: "1994 — 1997",
+    location: "Richmond, VA",
+    focus: "Residential sales · Client relations · Business development",
+    highlights: [
+      "Started at 22 specifically to get away from computers — made $10k/month within the first year",
+      "The escape didn't last: local real estate firms discovered I knew networks, kept their offices running, and pulled me back into tech",
+      "Three years of sales, negotiation, and client management — skills that quietly inform every enterprise engagement since",
     ],
     current: false,
   },
