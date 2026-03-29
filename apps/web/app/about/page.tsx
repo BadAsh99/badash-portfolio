@@ -115,6 +115,14 @@ export default function AboutPage() {
               The teacher pulled me aside for wasting valuable time on the computer. That was 1979. Nothing has changed.
             </p>
             <p>
+              At home we had our own TI — that{"'"}s where I practiced. When we graduated to a Windows PC, my dad had one rule:
+              if my brother and I broke the OS —{" "}
+              <span className="text-terminal-green font-semibold">and we broke it constantly</span>{" "}
+              — we fixed it ourselves. No exceptions. Reload the OS, figure it out, or it stays broken.{" "}
+              <span className="text-terminal-cyan">That{"'"}s still how I operate.</span>{" "}
+              Break things. Understand why. Put it back together better.
+            </p>
+            <p>
               I{"'"}ve hardened the networks that move energy across continents, route the calls of hundreds of millions,
               and process the transactions of global finance.{" "}
               <span className="text-terminal-green font-semibold">

@@ -41,7 +41,9 @@ export function ProHero() {
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-4">
             In elementary school, my class got a Texas Instruments computer. Every other kid played games.
             I wrote BASIC — making the screen change colors, making it produce sounds. The teacher called it
-            wasting time. That was 1979. I{"'"}m still at it.
+            wasting time. That was 1979. I{"'"}m still at it. At home, my dad had one rule: if my brother
+            and I broke the OS — and we broke it constantly — we fixed it ourselves. No exceptions.
+            That{"'"}s still how I operate. Break things. Understand why. Put it back together better.
           </p>
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-8">
             Senior security consultant specializing in enterprise SASE deployments and AI security architecture.
