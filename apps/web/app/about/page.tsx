@@ -123,21 +123,41 @@ export default function AboutPage() {
               Break things. Understand why. Put it back together better.
             </p>
             <p>
+              I got my first job at 15 and a half — workers permit, waiting tables, helping the family keep the lights on
+              and buying computer parts with whatever was left.{" "}
+              <span className="text-terminal-green font-semibold">I{"'"}ve never stopped working since.</span>{" "}
+              Bartended through school. Did what needed doing. That{"'"}s not a complaint — that{"'"}s a baseline.
+            </p>
+            <p>
+              By my early twenties I was so burned out on computers I deliberately walked away.{" "}
+              <span className="text-terminal-cyan">Got my real estate license. Made $10k a month.</span>{" "}
+              Thought I was out. Then the brokerages figured out I could keep their networks running
+              and dragged me back in — and honestly, they loved me for it. Computers weren{"'"}t done with me.
+              Three years in real estate taught me how to sell, negotiate, and read a room.
+              Every enterprise engagement since has used those skills.
+            </p>
+            <p>
+              1997. Unisys. Fly-and-fix field team.{" "}
+              <span className="text-terminal-green font-semibold">We rolled out the Y2K fix across the entire Social Security Administration.</span>{" "}
+              Visited nearly every state in the US — Thursday to Monday, week after week.
+              One of the largest coordinated government IT deployments in history. I was on the ground for it.
+            </p>
+            <p>
               2001. Tech bubble burst. Got laid off from a $250k job at GE Spacenet in Northern VA — living the life one day,
-              back in Richmond with my tail between my legs the next. Unemployment running out, no money, no plan.{" "}
+              back in Richmond with nothing the next. Unemployment running out, no money, no plan.{" "}
               <span className="text-terminal-green font-semibold">
                 So I downloaded pirated copies of Dreamweaver and Flash because I couldn{"'"}t afford Adobe,
                 and taught myself HTML, CSS, Java, and Flash from scratch.
               </span>{" "}
               Built a portfolio. Landed VCU Art School, shops in Carytown, ecommerce clients. Started ProfilesPC —
-              web, graphic design, security, and network consulting out of my home in Richmond — $125k a year, working for myself.
+              web, graphic design, security, and network consulting — $125k working from home.
               First thing I did when the money came in was buy a legal copy of the Adobe suite.
             </p>
             <p>
-              That{"'"}s also where I first encountered automation. Dreamweaver added FTP functionality — you could upload
-              a site directly to the hosting server from inside the software.{" "}
-              <span className="text-terminal-cyan">A manual process, automated.</span>{" "}
-              I remember thinking: that{"'"}s better. That thought never left.
+              That{"'"}s also where I first encountered automation. Dreamweaver added FTP — upload a site live
+              without touching a terminal.{" "}
+              <span className="text-terminal-cyan">A manual process, gone.</span>{" "}
+              That thought never left.
             </p>
             <p>
               I{"'"}ve hardened the networks that move energy across continents, route the calls of hundreds of millions,
@@ -149,8 +169,7 @@ export default function AboutPage() {
             </p>
             <p>
               Zero Trust architecture isn{"'"}t a framework to me — it{"'"}s production code running across some of the most
-              complex, high-stakes environments on the planet. SASE deployments at enterprise scale: carrier-grade telecom,
-              gas {"&"} oil critical infrastructure, Fortune 500. I{"'"}ve seen what breaks. I{"'"}ve seen what holds.
+              complex, high-stakes environments on the planet. I{"'"}ve seen what breaks. I{"'"}ve seen what holds.
             </p>
             <p>
               By night, I{"'"}m building what the industry doesn{"'"}t have yet: AI security tooling that applies the same
