@@ -143,7 +143,7 @@ export default function AboutPage() {
               One of the largest coordinated government IT deployments in history. I was on the ground for it.
             </p>
             <p>
-              2001. Tech bubble burst. Got laid off from a six-figure role at GE Spacenet in Northern VA — living the life one day,
+              2001. Tech bubble burst. Got laid off from iDirect post-9/11 — living the life one day,
               back in Richmond with nothing the next. That year hit hard on multiple fronts.{" "}
               <span className="text-terminal-cyan">Building something wasn{"'"}t just about the money — it was about having something to show up for every day.</span>{" "}
               Unemployment running out, no plan.{" "}
