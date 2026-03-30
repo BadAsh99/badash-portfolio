@@ -97,7 +97,8 @@ export const experience = [
     location: "Reston, VA",
     focus: "Satellite communications · NOC support · Global installs",
     highlights: [
-      "Satellite communications NOC support — global satellite install support shortly after leaving Spacenet",
+      "Satellite communications NOC support — global satellite installs, direct continuation of Spacenet carrier work",
+      "Flagged a suspicious support call where reported coordinates didn't match stated location — escalated to director; FBI and DOD on site by morning",
       "Laid off post-9/11 along with most of the industry",
     ],
     current: false,
