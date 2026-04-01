@@ -110,9 +110,14 @@ export default function AboutPage() {
           </div>
           <div className="font-mono text-sm text-terminal-text space-y-4 leading-relaxed">
             <p>
-              Elementary school. Texas Instruments computer in the classroom. Every other kid was playing games.{" "}
-              <span className="text-terminal-green font-semibold">I was writing BASIC — making the screen change colors, making it produce sounds.</span>{" "}
-              The teacher pulled me aside for wasting valuable time on the computer. That was 1979. Nothing has changed.
+              Elementary school. Texas Instruments in the classroom. Every other kid was playing games.{" "}
+              <span className="text-terminal-green font-semibold">I was writing BASIC — making the screen flash colors, making it beep.</span>{" "}
+              The teacher pulled me aside for wasting time. I was 11.{" "}
+              I tested at the 99th percentile for logic that year.{" "}
+              <span className="text-terminal-cyan">I didn{"'"}t know what that meant. I just built things.</span>
+            </p>
+            <p>
+              Nothing has changed.
             </p>
             <p>
               At home we had our own TI — that{"'"}s where I practiced. When we graduated to a Windows PC, my dad had one rule:
@@ -170,19 +175,23 @@ export default function AboutPage() {
               </span>
             </p>
             <p>
-              Zero Trust architecture isn{"'"}t a framework to me — it{"'"}s production code running across some of the most
-              complex, high-stakes environments on the planet. I{"'"}ve seen what breaks. I{"'"}ve seen what holds.
+              In 2017 I joined Palo Alto Networks as{" "}
+              <span className="text-terminal-green font-semibold">one of the first two consultants on a team with no name, no desk, and no playbook.</span>{" "}
+              We were building something nobody had built before — what would eventually become{" "}
+              <span className="text-terminal-cyan">Prisma Access</span>, the product that defined modern SASE.
+              I filed the Jira bugs, read the logs at 2am, stayed on the bridge when customers were yelling.
+              Every one of those customers is still on Prisma Access today.
             </p>
             <p>
-              By night, I{"'"}m building what the industry doesn{"'"}t have yet: AI security tooling that applies the same
-              runtime monitoring principles proven in network security to the new attack surface — LLMs.{" "}
-              <span className="text-terminal-green">LLMGuardT2. CloudGuard. badash-killchain.</span>{" "}
-              Not demos. Not tutorials. Real scanners, real detection, running in production.
+              Now here we are with AI. Same moment. Same chaos.{" "}
+              <span className="text-terminal-cyan">AIRS is evolving every week</span> — agentic security, MCP protection, API Intercept.
+              I couldn{"'"}t get a demo so I reverse engineered the problem and built{" "}
+              <span className="text-terminal-green font-semibold">AISeal</span> — a live AI Trust Certification platform — on personal time.
+              Not a proof of concept. A deployed product.{" "}
+              <span className="text-terminal-cyan">Because that{"'"}s what I do.</span>
             </p>
-            <p>
-              The shift from signature-based detection to behavioral ML in network security took a decade.
-              In AI security, it{"'"}s happening in months. I{"'"}m not watching it happen —
-              I{"'"}m <span className="text-terminal-cyan">building the guardrails</span>.
+            <p className="text-terminal-green font-semibold">
+              I don{"'"}t wait to be assigned. I build.
             </p>
             <p className="text-terminal-muted border-t border-terminal-border pt-4 mt-4">
               <span className="text-terminal-green">BadAshWednesdays</span> — weekly deep dives on AI security,
