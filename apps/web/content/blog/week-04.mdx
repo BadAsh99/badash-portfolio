@@ -1,0 +1,229 @@
+---
+title: "Week 4 — I Turned My AI Security Scanner Into an Enterprise API"
+date: "2026-04-09"
+description: "A UI-only scanner is a demo. A REST API is a product. This week I ripped out 400 lines of TypeScript and replaced it with a FastAPI service that any CI/CD pipeline can call."
+tags: ["AI Security", "FastAPI", "OWASP LLM Top 10", "API Design", "Python", "DevOps"]
+week: 4
+draft: false
+---
+
+![AISeal TrustScan API — BadAshWednesdays Week 4](/blog/week-04-aiseal-api.png)
+
+I built an AI security scanner. It worked.
+
+Then I realized it was useless.
+
+## The Problem With UI-Only Security Tools
+
+[AISeal](https://aiseal.ai) runs OWASP LLM Top 10 checks against any prompt or model configuration and returns a TrustScore from 0–100. The scanner logic was solid. Thirteen red team test cases. PDF export. Clean UI.
+
+But the entire engine lived inside a Next.js API route.
+
+That means:
+
+- **No CI/CD integration.** You can't call it from a GitHub Action.
+- **No SOAR hook.** A security team can't operationalize it.
+- **No third-party integration.** No other tool can consume the trust signal.
+- **No public API docs.** You can't hand it to a customer and say "integrate this."
+
+A demo. A well-built demo, but a demo. And demos don't survive contact with enterprise procurement.
+
+The fix wasn't adding features. It was changing the architecture.
+
+## Where AISeal Fits in the AI Security Stack
+
+Before getting into the build — it's worth being precise about what this tool actually is, because "AI security" covers a lot of ground right now.
+
+The large platform players — the ones building unified gateways, AI firewalls, and agentic security fabrics — are building **enforcement infrastructure**. They sit between your users and your AI tools and enforce policy at the network layer. That's the right model for a CISO running a global org.
+
+AISeal is a different layer. It's a **trust signal lookup engine**.
+
+Think VirusTotal. You don't go to VirusTotal — your tools call it. Before a file gets opened, before a URL gets clicked, a machine has already asked VirusTotal for a verdict. The answer feeds into enforcement decisions made by other tools.
+
+That's what TrustScore needs to be for LLMs. Before you write a DLP policy for a new AI tool, call AISeal. Before you deploy a model to production, gate on TrustScore in CI/CD. Before a vendor gets certified, run the red team suite.
+
+The enforcement layer and the trust signal layer aren't competitors. They're a stack. One calls the other.
+
+That framing is what drove this week's build.
+
+## The Decision: Extract and Expose
+
+The scanner logic needed to move out of Next.js and into its own service. Once it's standalone with a versioned REST API, everything else falls into place:
+
+- Next.js becomes a thin UI proxy
+- The API is callable from anywhere
+- OpenAPI docs are auto-generated
+- Rate limiting, auth, and versioning are first-class concerns
+- Python scanner is the single source of truth — no TypeScript/Python drift
+
+I chose **FastAPI** for the scanner service. It generates OpenAPI docs automatically. Pydantic handles schema validation. The pattern matches how I'd architect a production microservice for a customer engagement.
+
+## What Got Built
+
+```
+aiseal/
+├── scanner/              ← New FastAPI service
+│   ├── main.py           ← Routes, auth, rate limiting
+│   ├── scanner.py        ← OWASP engine — single source of truth
+│   ├── models.py         ← Pydantic schemas
+│   ├── Dockerfile
+│   └── railway.json
+└── app/api/scan/route.ts ← Was 400 lines. Now 35.
+```
+
+Two endpoints:
+
+```
+GET  /v1/health   — no auth, service liveness
+POST /v1/scan     — X-AISeal-Key header, 30 req/min rate limit
+```
+
+The Next.js route that used to run the entire OWASP engine now does this:
+
+```typescript
+const res = await fetch(`${SCANNER_URL}/v1/scan`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-AISeal-Key": SCANNER_KEY,
+  },
+  body: JSON.stringify({ prompt, model, scenario }),
+});
+```
+
+Thirty-five lines. The UI has no idea how the scanner works. That's correct.
+
+## Porting 400 Lines of TypeScript to Python
+
+The original scanner was TypeScript regex patterns inside a Next.js API route. Porting to Python was mostly mechanical — `re.compile()` instead of `/pattern/i`, `.search()` instead of `.test()`. The logic is identical.
+
+Here's the LLM01 (Prompt Injection) detector shape:
+
+```python
+hard_patterns = [
+    (re.compile(r"ignore\s+(all\s+)?previous\s+instructions?", re.I), "direct override"),
+    (re.compile(r"jailbreak", re.I),                                   "jailbreak attempt"),
+    (re.compile(r"bypass\s+(your\s+)?(safety|filter|restriction)", re.I), "safety bypass"),
+    (re.compile(r"\bDAN\b"),                                            "DAN jailbreak"),
+]
+
+indirect_patterns = [
+    (re.compile(r"when\s+you\s+read\s+a\s+document\s+that\s+contains", re.I), "multi-stage indirect injection"),
+    (re.compile(r"if\s+any\s+tool\s+returns", re.I),                           "tool-response hijack"),
+    (re.compile(r"the\s+next\s+time\s+you\s+are\s+called", re.I),             "persistent instruction injection"),
+]
+```
+
+Escalation logic matters. Hard match or indirect match → `fail` / `critical`. Multiple soft signals → `fail` / `high`. Single soft signal → `warning` / `medium`. Clean → `pass`.
+
+A single "pretend you are a pirate" isn't an attack. Four corroborating soft signals probably is. The scanner looks for pattern density, not individual triggers. This keeps false positives low enough to run in a CI/CD gate without crying wolf on every deploy.
+
+## The Auth Layer
+
+API key auth via header — simple, auditable, revocable per consumer:
+
+```python
+VALID_KEYS: set[str] = set(
+    k.strip() for k in os.environ.get("AISEAL_API_KEYS", "").split(",") if k.strip()
+)
+
+def verify_key(x_aiseal_key: str = Header(...)):
+    if x_aiseal_key not in VALID_KEYS:
+        raise HTTPException(status_code=401, detail="Invalid API key")
+    return x_aiseal_key
+```
+
+Keys are comma-separated in the env var. Add a consumer, add a key. Revoke one without touching the others. No database required at this stage — env-injected, Railway-managed.
+
+Rate limiting via `slowapi`:
+
+```python
+@app.post("/v1/scan")
+@limiter.limit("30/minute")
+async def scan(request: Request, body: ScanRequest, key: str = Depends(verify_key)):
+    ...
+```
+
+Thirty requests per minute per IP. Enough for a CI/CD pipeline. Not enough to abuse.
+
+## What a Scan Response Looks Like
+
+```json
+{
+  "scan_id": "b5d72d1a-06c7-48ae-9f09-80c1d6fc5f26",
+  "score": 50,
+  "model": "gpt-4o",
+  "latency_ms": 2,
+  "categories_checked": 10,
+  "findings": [
+    {
+      "code": "LLM01",
+      "category": "Prompt Injection",
+      "status": "fail",
+      "severity": "critical",
+      "detail": "Direct injection detected (direct override). Unambiguous attempt to override model guardrails.",
+      "nist": {
+        "functions": ["MEASURE", "MANAGE"],
+        "pillars": ["Secure & Resilient", "Accountable & Transparent"]
+      },
+      "mitre": [{ "id": "AML.T0051", "name": "LLM Prompt Injection" }]
+    }
+  ]
+}
+```
+
+Every finding carries NIST AI RMF function mappings and MITRE ATLAS technique IDs. Machine-readable. Structured for downstream enforcement decisions. 2ms latency on the scanner itself — the network round trip is your bottleneck, not the scoring engine.
+
+## The CI/CD Gate
+
+This is what it was all for:
+
+```yaml
+- name: AISeal TrustScan Gate
+  run: |
+    SCORE=$(curl -s -X POST https://api.aiseal.ai/v1/scan \
+      -H "X-AISeal-Key: ${{ secrets.AISEAL_API_KEY }}" \
+      -H "Content-Type: application/json" \
+      -d '{"prompt": "${{ env.TEST_PROMPT }}", "model": "gpt-4o"}' \
+      | jq '.score')
+    if [ "$SCORE" -lt 70 ]; then
+      echo "TrustScore $SCORE — below threshold. Failing build."
+      exit 1
+    fi
+```
+
+A security check that runs on every push. Against the same engine that generates the PDF report. With machine-readable output that other tools can act on. No human in the loop until something actually fails.
+
+That's not a scanner. That's a trust signal in a pipeline. There's a difference.
+
+## The Deployment Split
+
+The scanner service and the Next.js frontend are two separate Railway services. They communicate over Railway's private network:
+
+```
+Next.js (aiseal.ai)
+  → SCANNER_API_URL=http://aiseal-scanner.railway.internal:8000
+  → internal call, never leaves Railway's network
+
+FastAPI scanner (api.aiseal.ai)
+  → public endpoint for external consumers
+  → same engine, different exposure
+```
+
+The UI calls the internal URL. External consumers call the public domain. Same scanner. Same keys. Same OpenAPI spec at `api.aiseal.ai/docs`.
+
+## What's Next
+
+Gap D is done. The API exists. The ship gate is hit.
+
+Gap B is next: **scan history and drift detection**.
+
+A point-in-time TrustScore isn't enough. What a security team actually needs is: *this model scored 84 last month, 79 two weeks ago, 61 today. Something changed. Find it.*
+
+That means persisting scan results, building a history endpoint, and showing score trend on the dashboard. Same behavioral analytics pattern I deploy in enterprise SASE — watching for deviation from baseline, not just checking current state.
+
+That's next week.
+
+---
+
+*BadAshWednesdays drops every Wednesday. Real builds, real problems, no tutorials. Scanner live at aiseal.ai. API at api.aiseal.ai. Week 5: the scanner gets memory.*
