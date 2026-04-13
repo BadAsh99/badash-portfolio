@@ -1,0 +1,71 @@
+---
+title: "Week 7 — There Is No Stack"
+date: "2026-04-29"
+description: "The hardest part of Panorama → Strata Cloud Manager migration isn't the technical work. It's explaining that something the customer has relied on for 10 years doesn't exist in the destination."
+tags: ["Panorama", "Strata Cloud Manager", "PAN-OS", "Network Security", "PS Engineering"]
+week: 7
+draft: false
+---
+
+I'm doing one of the first large-scale Panorama to Strata Cloud Manager migrations in a production environment.
+
+Not a lab. Not a proof of concept. A customer with 48 firewalls, six years of Panorama configuration, and a team that has been maintaining their network the same way since the Obama administration.
+
+The hardest thing to explain to them wasn't the technical complexity. It was explaining that something they've built their entire operational model around simply doesn't exist in the destination.
+
+## Template Stacks: Gone
+
+In Panorama, Template Stacks are the organizational backbone of multi-site deployments. You build a base template with shared configuration — BGP timer defaults, SNMP settings, NTP servers, syslog servers, management interface config. Then you stack site-specific templates on top. The stack resolves top-down: site-specific settings win, shared settings fill the gaps.
+
+This customer had six stacks. Each stack was: Corp-Base + a site-specific template. Corp-Base had everything shared — 847 lines of configuration that was identical across all 48 devices. The site templates had the local stuff: interface addresses, routing, local zone names.
+
+Six stacks. One Corp-Base. Maintained in six places because that's how stacks work — Corp-Base is a member of each stack, not a reference to a single source.
+
+When I told them that Template Stacks don't exist in SCM, the room got quiet.
+
+## What Actually Exists
+
+SCM uses Snippets. The conceptual shift is from "inheritance chain" to "scoped objects."
+
+A Snippet is a reusable configuration block. You define it once. You scope it: All Firewalls, a specific folder, or individual devices. You enable cascade and it flows down the folder hierarchy to everything in scope.
+
+The translation for this customer:
+
+- **Corp-Base template → Corp-Base-Snippet**, scoped to "All Firewalls", cascade ON. One object. Pushes to all 48 devices automatically. You change it once and 48 devices pick it up.
+- **Six site-specific templates → six site-specific Snippets**, each scoped to their respective folder containing the firewalls at that site.
+
+One snippet instead of one template that was a member of six stacks. Same logic. Radically different operational model.
+
+## The Reaction
+
+When the customer finally understood what this meant — and it took a whiteboard session with a live visualization showing the old hierarchy dissolving and reconstructing as the new model — the lead network engineer said:
+
+*"Wait. We've been maintaining six copies of the same config for ten years?"*
+
+Yes. That's exactly what they'd been doing. Not because anyone was careless. Because that's what the tool required. Corp-Base had to be a stack member in each of the six stacks. Changes to it propagated when you pushed, but the object itself was the same Panorama template referenced in multiple places. The cognitive overhead of "is this change going to affect all six stacks or just the one I'm editing" was a constant background tax.
+
+In SCM, with cascade on, that question doesn't exist anymore. You edit Corp-Base-Snippet in one place. Done.
+
+## The Tool I Had to Build
+
+The reason I had to whiteboard this with a visualization instead of pointing to documentation is that the documentation doesn't explain it this way. It explains what Snippets are. It explains cascade. It doesn't explain what happens to your Template Stack topology when you migrate.
+
+I built a visualization tool that shows the before-and-after in parallel — Panorama's hierarchy on one side (Device Groups, Template Stacks, Templates), SCM's hierarchy on the other (Folders, Snippets, scope assignments), with animated transitions showing how each object class maps to its destination equivalent.
+
+The tool runs a parity check: for a given Panorama config export, it maps every template to its SCM Snippet equivalent, flags any configuration that doesn't have a clean translation, and identifies the cases where scope assignment changes the effective configuration for specific devices.
+
+That last part matters. The translation isn't always symmetric. A device that was inheriting from Corp-Base through Stack A now gets Corp-Base-Snippet via "All Firewalls" scope. If that device also has a folder-specific snippet with overlapping config, the resolution order is different. Miss that and you've just silently changed the effective config on a production firewall.
+
+## The Broader Thing
+
+I've been doing PS engagements long enough to know that the hardest migrations aren't the ones where the technical work is complex. They're the ones where the conceptual model of the destination doesn't map cleanly onto the conceptual model of the source.
+
+The technical work here is tractable. XPath parsing, config object mapping, scope assignment, parity checking — these are solved problems.
+
+The hard part is getting a team to let go of a mental model they've held for ten years and trust that the new model isn't just different — it's actually better. That's not a technical problem. That's a communication problem.
+
+Which is why PS engineers end up building their own tools to explain things the docs don't cover.
+
+---
+
+*BadAshWednesdays drops every Wednesday. Real work, real migrations, no tutorials.*

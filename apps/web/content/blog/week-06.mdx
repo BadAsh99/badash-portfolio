@@ -1,0 +1,59 @@
+---
+title: "Week 6 — EU AI Act: 112 Days, €35M Fines, and the Math Doesn't Work"
+date: "2026-04-22"
+description: "August 2, 2026. Article 15 requires adversarial testing evidence for high-risk AI. TÜV SÜD charges €150K and takes 6-18 months. Most vendors have neither."
+tags: ["EU AI Act", "AI Compliance", "AI Security", "AISeal", "Regulation"]
+week: 6
+draft: false
+---
+
+August 2, 2026. That's the date.
+
+That's when Article 15 of the EU AI Act becomes enforceable for high-risk AI systems. Article 15 requires accuracy, robustness, and cybersecurity — specifically including adversarial testing evidence demonstrating resilience against data poisoning, adversarial examples, model evasion, and model inversion attacks.
+
+Not a questionnaire. Not a self-attestation. Evidence. Documented methodology. Results tied to probabilistic thresholds — the exact language from Article 9. An Annex IV technical documentation package that a conformity assessment body can review.
+
+That's 112 days from today.
+
+## The Fines Are Real
+
+€35 million or 7% of global annual turnover, whichever is higher, for violations involving high-risk AI in prohibited categories. For mid-tier violations — deploying a high-risk system without proper conformity assessment — it's €15M or 3% of turnover. These aren't theoretical enforcement numbers. The EU has already demonstrated with GDPR that they will use the upper range against large companies and proportional enforcement against smaller ones.
+
+The Digital Omnibus directive has been floated as a potential vehicle to delay or harmonize some provisions. It has **not been enacted**. As of today, August 2 stands. Planning your compliance timeline around a delay that hasn't materialized is how you end up explaining to your board why you're in enforcement proceedings in Q4.
+
+## The Assessment Math
+
+TÜV SÜD, DEKRA, BSI — the traditional conformity assessment bodies — charge €100K–€200K for a manual AI system audit. Timeline is 6 to 18 months. They send consultants, review training data provenance, interview your MLOps team, and write a report that maps your system against the Annex requirements.
+
+For a large bank or automotive OEM deploying AI at scale, that's annoying but survivable. You have procurement teams, legal budgets, and compliance departments.
+
+For the mid-market SaaS vendor whose HR tool does automated candidate screening — which is explicitly listed as high-risk under Annex III — €150K and 18 months is structurally impossible. Their entire engineering team is 6 people. Their compliance budget doesn't have a line item for conformity assessment because they didn't exist when the Act was being drafted.
+
+There are roughly 40,000 companies in the EU (and companies selling into the EU) that will need Article 15 evidence packages for at least one product. The traditional assessment industry cannot physically process that volume by August.
+
+## What the Law Actually Says About Methodology
+
+Here's the part most people miss: **Article 15 does not specify assessment methodology**. It specifies outcome requirements — documented evidence of adversarial robustness across the four attack categories, with results tied to quantitative thresholds.
+
+Automated scanning results are legally valid if:
+
+1. The methodology is documented and reproducible
+2. The attack categories are mapped to the Article 15 taxonomy (data poisoning, adversarial examples, model evasion, model inversion)
+3. Results express findings as probabilistic thresholds, not binary pass/fail
+4. The evidence package conforms to Annex IV structure
+
+That's the gap nobody's filling: automated evidence generation that produces an Annex IV-compliant technical documentation package directly from test results. Not a PDF you manually write from scan output. A structured package that maps test coverage to Article 15 categories and generates the documentation artifacts the regulation requires.
+
+## What I'm Building
+
+AISeal already runs automated adversarial testing — 10 OWASP LLM categories, MITRE ATLAS technique mapping, risk-weighted scoring. The scanner is live. The test methodology is documented.
+
+The next piece is the compliance evidence layer: taking those results and generating an Annex IV package that a legal team can actually file. Mapping LLM01-10 findings to Article 15 categories. Expressing TrustScores as probabilistic thresholds with confidence bounds. Structuring outputs to match the documentation requirements a conformity assessment body expects to see.
+
+The economics work because automated scanning costs 1-2% of a manual assessment. If the methodology produces legally valid evidence — and the law says it can — you've unlocked compliance for the 40,000 companies the traditional industry can't reach by August.
+
+112 days is tight. But the regulation isn't waiting on the tooling ecosystem to catch up.
+
+---
+
+*BadAshWednesdays drops every Wednesday. Week 7: the hardest part of a Panorama-to-SCM migration isn't technical.*
