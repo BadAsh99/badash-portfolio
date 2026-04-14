@@ -48,24 +48,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "panorama-scm-migrator",
-    name: "SCMReady",
-    description: "Interactive Panorama → SCM migration teaching tool. Upload a config, visualize the hierarchy, and walk out knowing exactly which templates become snippets.",
-    longDescription:
-      "PS-grade migration tool powered by the StackShift engine. Classifies Panorama templates as shared vs site-specific, recommends exact snippet scope and cascade settings, detects hard migration blockers, and scrubs credentials stronger than PANW's own TAC pipeline.",
-    tags: ["Panorama", "Strata Cloud Manager", "PAN-OS", "Migration", "Flask", "Python", "Professional Services"],
-    githubUrl: "https://github.com/BadAsh99/panorama-scm-migrator",
-    pageUrl: "/projects/scmready",
-    language: "Python",
-    status: "active",
-    highlights: [
-      "StackShift engine: classifies templates → snippet scope + cascade",
-      "Hard blocker detection (intrazone-default, PAN-OS version)",
-      "TAC-grade credential scrubbing — 21+ field types",
-      "Interactive canvas: pan, zoom, drag-to-remap",
-    ],
-  },
-  {
     id: "cloudguard",
     name: "CloudGuard",
     description: "Cloud misconfiguration scanner for AWS, Azure, and GCP with CIS Benchmark mapping and PDF reports",

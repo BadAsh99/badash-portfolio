@@ -152,7 +152,7 @@ export function ProjectsSection() {
   const getGH = (id: string) =>
     githubData[id.toLowerCase()] ?? githubData[id.replace(/-/g, "").toLowerCase()];
 
-  const [killchain, llmguardt2, scmready, cloudguard, ...rest] = projects;
+  const [killchain, llmguardt2, cloudguard, ...rest] = projects;
 
   return (
     <section id="projects" className="py-24 px-4 max-w-6xl mx-auto relative">
@@ -175,8 +175,7 @@ export function ProjectsSection() {
         <FeaturedCard project={killchain} gh={getGH(killchain.id)} wide />
         <FeaturedCard project={llmguardt2} gh={getGH(llmguardt2.id)} />
 
-        {/* Row 2: scmready + cloudguard */}
-        <FeaturedCard project={scmready} gh={getGH(scmready.id)} />
+        {/* Row 2: cloudguard + first compact */}
         <FeaturedCard project={cloudguard} gh={getGH(cloudguard.id)} />
 
         {/* Row 3: compact rest */}
