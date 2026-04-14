@@ -48,11 +48,13 @@ function GHStats({ gh }: { gh: GitHubRepo }) {
 // Featured card — spans 2 cols or is a tall single col; shows highlights
 function FeaturedCard({ project, gh, wide }: { project: typeof projects[0]; gh?: GitHubRepo; wide?: boolean }) {
   const sl = statusLabel(project.status);
+  const href = project.pageUrl ?? project.githubUrl;
+  const isExternal = !project.pageUrl;
   return (
     <a
-      href={project.githubUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className={`glass-card p-5 flex flex-col gap-4 group hover:border-terminal-green/40 transition-all${wide ? " lg:col-span-2" : ""}`}
     >
       <div className="flex items-start justify-between gap-3">
@@ -96,11 +98,13 @@ function FeaturedCard({ project, gh, wide }: { project: typeof projects[0]; gh?:
 // Compact card — single col, no highlights
 function CompactCard({ project, gh }: { project: typeof projects[0]; gh?: GitHubRepo }) {
   const sl = statusLabel(project.status);
+  const href = project.pageUrl ?? project.githubUrl;
+  const isExternal = !project.pageUrl;
   return (
     <a
-      href={project.githubUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className="glass-card p-4 flex flex-col gap-3 group hover:border-terminal-green/40 transition-all"
     >
       <div className="flex items-start justify-between gap-2">
@@ -148,7 +152,7 @@ export function ProjectsSection() {
   const getGH = (id: string) =>
     githubData[id.toLowerCase()] ?? githubData[id.replace(/-/g, "").toLowerCase()];
 
-  const [killchain, llmguardt2, cloudguard, ...rest] = projects;
+  const [killchain, llmguardt2, scmready, cloudguard, ...rest] = projects;
 
   return (
     <section id="projects" className="py-24 px-4 max-w-6xl mx-auto relative">
@@ -171,8 +175,11 @@ export function ProjectsSection() {
         <FeaturedCard project={killchain} gh={getGH(killchain.id)} wide />
         <FeaturedCard project={llmguardt2} gh={getGH(llmguardt2.id)} />
 
-        {/* Row 2: cloudguard + compact rest */}
+        {/* Row 2: scmready + cloudguard */}
+        <FeaturedCard project={scmready} gh={getGH(scmready.id)} />
         <FeaturedCard project={cloudguard} gh={getGH(cloudguard.id)} />
+
+        {/* Row 3: compact rest */}
         {rest.map((p) => (
           <CompactCard key={p.id} project={p} gh={getGH(p.id)} />
         ))}
