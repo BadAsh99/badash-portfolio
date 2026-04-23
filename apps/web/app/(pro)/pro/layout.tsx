@@ -3,6 +3,7 @@ import "../../globals.css";
 import { ProNavBar } from "@/components/pro/ProNavBar";
 import { ProFooter } from "@/components/pro/ProFooter";
 import { ProThemeProvider } from "@/components/pro/ProThemeProvider";
+import { ProBackdoor } from "@/components/pro/ProBackdoor";
 
 export const metadata: Metadata = {
   title: {
@@ -26,6 +27,7 @@ export default function ProLayout({ children }: { children: React.ReactNode }) {
     <html lang="en" className="dark">
       <body className="font-sans antialiased bg-terminal-bg text-terminal-text min-h-screen">
         <ProThemeProvider>
+          <ProBackdoor />
           <ProNavBar />
           <main>{children}</main>
           <ProFooter />
