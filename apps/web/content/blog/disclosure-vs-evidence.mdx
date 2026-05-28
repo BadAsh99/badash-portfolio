@@ -1,0 +1,63 @@
+---
+title: "Disclosure ≠ Evidence — The Coming AI Trust Layer"
+date: "2026-05-28"
+description: "An AI vendor saying their model is safe is disclosure. Running OWASP LLM Top 10 red-team scans against the live endpoint and signing the result is evidence. The market is filling with the former. AISeal certifies the latter."
+tags: ["AI Security", "AISeal", "AI Governance", "OWASP LLM", "EU AI Act"]
+draft: false
+---
+
+In 1995 you could put a padlock icon on your website. It meant nothing — anyone could draw one. By 1996 the industry had moved to certificates issued by a Certificate Authority that verified domain ownership. The padlock became evidence, not a claim. Browsers now refuse to show the padlock at all without it.
+
+AI is in 1995.
+
+Every model provider claims their AI is safe. Every vendor publishes a policy. The market is filling rapidly with "AI trust" registries that publish those policies in a clean grid layout — vendor X discloses they use guardrails, vendor Y discloses they use red-teaming, vendor Z discloses they have a responsible-AI committee. Procurement teams read it and have no way to distinguish *"we ran red-team tests"* from *"we said we ran red-team tests."*
+
+That distinction is the entire game.
+
+## The two product categories
+
+There are two things in the market that look the same from a distance.
+
+**Disclosure registries** are vendor-attested. The vendor fills out a questionnaire. The registry publishes the answers. The buyer reads them. Nothing is independently tested. The badge on the vendor's site says "registered." It does not say "verified." There is no cryptographic binding between the badge and any actual behavior — the vendor could swap the model the next day and the badge would still display.
+
+Disclosure registries are useful. Transparency is a real public good. But they are the SEO meta-tag of AI safety — anyone can fill one out.
+
+**Evidence-based certification** is independent. A third party runs the test. The test has a defined rubric. The result is scored. The badge embeds a cryptographic signature of the score, the cert ID, the vendor's domain, and the issuance date. A verify endpoint regenerates the signature from the canonical cert record and constant-time-compares it to whatever is in the badge. If someone tampered with a single byte of the badge or tried to embed it on a site the cert doesn't cover, verification fails.
+
+That's the difference between writing "https" on your site and actually serving it over TLS.
+
+## What an AISeal certification actually involves
+
+AISeal is purpose-built as the CA layer for AI. Four things a disclosure form will never give you:
+
+**1. A red-team scan against the live model.** OWASP LLM Top 10 attack prompts are sent to the production endpoint and the responses are graded. Prompt injection. Sensitive information disclosure. Training-data poisoning. Model DoS. Insecure output handling. Supply chain. Excessive agency. No self-report — observed behavior. Score is 0-100 with a documented rubric.
+
+**2. A cryptographically signed badge.** The SVG embeds an HMAC-SHA256 signature of `(cert_id, vendor_domain, score, issued_date)`. Any byte tampered with breaks the signature. The verify endpoint regenerates it from the canonical record and constant-time compares — the comparison time does not depend on where the mismatch is, so timing attacks don't help.
+
+**3. Origin-bound verification.** The verify endpoint checks the `Origin` and `Referer` of the incoming request against the certified vendor domain. Embedding the badge on a site the cert doesn't cover returns `origin_mismatch` — every attempt is logged with a hashed IP for abuse analysis.
+
+**4. Runtime monitoring (ACF-3).** Ghost99RT watches the production model for behavioral drift after issuance. Models get retrained. Guardrails get loosened to ship a feature. If the cert was earned in March and then quietly degraded by May, we know. Disclosure registries are snapshots; ACF-3 maintains a posture.
+
+## Why "tested vs disclosed" matters for procurement
+
+The EU AI Act's high-risk provisions were deferred to August 2027 / 2028 under the Digital Omnibus reforms, but the August 2026 date is still the loud date the market remembers — it's the moment compliance-curious buyers started asking vendors to prove safety claims. NIST AI RMF is being adopted by US federal procurement as a reference framework. ISO 42001 is moving into RFPs. HITRUST is bolting on AI controls.
+
+Procurement teams reading a disclosure form cannot defend the decision in an audit. They can write "the vendor said they tested it" but they cannot show the test. They can quote the vendor's policy but they cannot verify it was applied. The disclosure registry gives them a clean PDF; the audit gives them nothing.
+
+An AISeal certification is auditable by design. The scan output is reproducible — we can re-run it against the same model version and reach the same score. The badge is verifiable from outside our infrastructure — anyone can hit the verify endpoint. The certification has a clear scope, a defined tier, an issuance date, an expiry date, and a documented framework mapping. That's what procurement actually needs to defend the purchase.
+
+## The honest concession
+
+Disclosure registries will be the bulk of the market by volume, the same way self-signed certs were the bulk of HTTPS in 1995. Disclosure is cheap. Evidence is not — every cert costs us real compute (we run the actual scan), engineering review time, and the legal-and-ops weight of standing behind an issued badge. AISeal certifications will always be a smaller, more expensive, more rigorous slice. That is on purpose.
+
+If you only need transparency theater, a disclosure registry is fine. If a procurement officer is going to ask you, in writing, to prove the safety claims on your model — that's where AISeal lives.
+
+## The position
+
+The job of the AI trust layer is not to publish vendor claims. The job is to *test* them and *sign* the result. Disclosure is the first floor. Evidence is the building.
+
+Disclosure ≠ Evidence.
+
+---
+
+Run a free TrustScan at [aiseal.ai/scan](https://aiseal.ai/scan). The full positioning lives at [aiseal.ai/disclosure-vs-evidence](https://aiseal.ai/disclosure-vs-evidence). The public registry of certified products is at [aiseal.ai/registry](https://aiseal.ai/registry).
