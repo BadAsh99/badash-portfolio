@@ -1,4 +1,4 @@
-import { domains, certifications } from "@/lib/pro-data";
+import { domains, certifications, education } from "@/lib/pro-data";
 import { TagBadge } from "@/components/shared/GlowBadge";
 
 export function SkillsGrid() {
@@ -15,6 +15,17 @@ export function SkillsGrid() {
           <div key={c.name} className="glass-card px-5 py-3 flex items-center gap-3">
             <span className="font-sans font-bold text-[#0080ff] text-sm">{c.name}</span>
             <span className="font-sans text-xs text-terminal-muted">{c.full}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Education */}
+      <div className="font-sans text-xs text-terminal-muted uppercase tracking-wide mb-3">Education</div>
+      <div className="flex flex-wrap gap-3 mb-10">
+        {education.map((e) => (
+          <div key={e.school} className="glass-card px-5 py-3 flex items-center gap-3">
+            <span className="font-sans font-bold text-[#0080ff] text-sm">{e.degree}</span>
+            <span className="font-sans text-xs text-terminal-muted">{e.school}{e.note ? ` · ${e.note}` : ""}</span>
           </div>
         ))}
       </div>

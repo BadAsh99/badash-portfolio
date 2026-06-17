@@ -149,6 +149,12 @@ export const certifications = [
   { name: "CISSP", full: "Certified Information Systems Security Professional (in progress — exam June 2026)", issuer: "ISC2", year: "2026" },
 ];
 
+export const education = [
+  { degree: "B.S. Cybersecurity & Information Assurance", school: "Western Governors University", note: "In progress" },
+  { degree: "Information Security Technology", school: "ECPI College of Technology" },
+  { degree: "Management Information Systems", school: "J. Sargeant Reynolds Community College" },
+];
+
 export const domains = [
   {
     name: "SASE & Network Security",
