@@ -53,7 +53,7 @@ export const experience = [
   },
   {
     role: "Sr. Network Security Engineer (Contractor)",
-    company: "FDA",
+    company: "U.S. FDA (contract via Management Systems Services, Inc.)",
     period: "2010 — 2012",
     location: "Washington, D.C.",
     focus: "Federal network security · Government infrastructure · Data center operations",
@@ -145,7 +145,7 @@ export const experience = [
 ];
 
 export const certifications = [
-  { name: "PCNSE", full: "Palo Alto Networks Certified Network Security Engineer", issuer: "Palo Alto Networks", year: "2022" },
+  { name: "PCNSE", full: "Palo Alto Networks Certified Network Security Engineer", issuer: "Palo Alto Networks", year: "2024" },
   { name: "CISSP", full: "Certified Information Systems Security Professional (in progress — exam June 2026)", issuer: "ISC2", year: "2026" },
 ];
 
