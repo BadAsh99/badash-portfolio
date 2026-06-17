@@ -9,7 +9,7 @@ export const experience = [
       "Lead complex Prisma Access (SASE) implementations for Fortune 500 organizations across oil & gas, telecom, and global financial services",
       "Architect Zero Trust network security for high-stakes enterprise environments — critical infrastructure, carrier-grade, global finance",
       "PCNSE certified with deep expertise in PAN-OS, GlobalProtect, SD-WAN, and Prisma Access",
-      "Building AI runtime security tooling in parallel — LLMGuardT2, Ghost99OC, and the AIRS framework — to validate the threat models behind the platform",
+      "Building AI runtime security tooling in parallel — an OWASP LLM Top 10 scanner, a runtime LLM behavior monitor, and an LLM red-team attack-chain framework — to validate the threat models behind the platform",
     ],
     current: true,
   },
@@ -146,7 +146,7 @@ export const experience = [
 
 export const certifications = [
   { name: "PCNSE", full: "Palo Alto Networks Certified Network Security Engineer", issuer: "Palo Alto Networks", year: "2022" },
-  { name: "AIRS", full: "AI Runtime Security Specialist (in progress)", issuer: "Palo Alto Networks", year: "2025" },
+  { name: "CISSP", full: "Certified Information Systems Security Professional (in progress — exam June 2026)", issuer: "ISC2", year: "2026" },
 ];
 
 export const domains = [
@@ -156,7 +156,7 @@ export const domains = [
   },
   {
     name: "AI Security",
-    items: ["OWASP LLM Top 10", "Prompt Injection", "AIRS", "LLM Red Teaming", "AI Runtime Security", "Semantic Detection"],
+    items: ["OWASP LLM Top 10", "Prompt Injection", "MITRE ATLAS", "LLM Red Teaming", "AI Runtime Security", "Semantic Detection"],
   },
   {
     name: "Cloud Security",
