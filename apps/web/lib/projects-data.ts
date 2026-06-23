@@ -52,6 +52,24 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "panw-multicloud-lab",
+    name: "PANW Multi-Cloud Lab",
+    description: "Network infrastructure-as-code: Panorama + PA-VM HA firewall pairs across Azure & GCP, full network fabric, AKS/GKE, and CI/CD — ~2,400 lines of modular Terraform",
+    longDescription:
+      "An entire enterprise security network built as code. Panorama centrally manages PA-VM HA firewall pairs in both Azure and GCP, with the full networking fabric provisioned via modular Terraform: VNets/VPCs, subnets, peering, UDR routing, internal load balancers with HA failover, and NSGs/firewall rules. AKS and GKE container clusters layer on top, firewall bootstrap is automated, and the whole thing deploys through GitHub Actions CI/CD. Layered base → networking → firewall → containers.",
+    tags: ["Terraform", "Multi-Cloud", "PAN-OS", "Azure", "GCP", "Kubernetes", "IaC", "Networking"],
+    githubUrl: "https://github.com/BadAsh99/panw-multicloud-lab",
+    language: "HCL",
+    status: "active",
+    highlights: [
+      "~2,400 lines of modular Terraform across Azure, GCP, k8s, and Panorama modules",
+      "Panorama managing PA-VM HA pairs in Azure + GCP (mgmt/untrust/trust/ha2 dataplane)",
+      "Full fabric: VPC/VNet, subnets, peering, UDR routing, internal LB with HA failover",
+      "AKS + GKE clusters layered on top, automated firewall bootstrap",
+      "GitHub Actions CI/CD: plan → deploy → validate → destroy",
+    ],
+  },
+  {
     id: "badash-killchain",
     name: "badash-killchain",
     description: "LLM red-team attack chain framework — cross-application attack chains, prompt injection, and agent-to-agent exploitation",
