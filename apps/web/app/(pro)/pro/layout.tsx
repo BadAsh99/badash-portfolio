@@ -7,7 +7,7 @@ import { ProBackdoor } from "@/components/pro/ProBackdoor";
 
 export const metadata: Metadata = {
   title: {
-    default: "Ash Clements — Sr. Professional Services Consultant",
+    default: "Ash Clements | Sr. Professional Services Consultant, SASE and AI Security",
     template: "%s | Ash Clements",
   },
   description:
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "profile",
     siteName: "Ash Clements",
-    title: "Ash Clements — Sr. Professional Services Consultant",
+    title: "Ash Clements | Sr. Professional Services Consultant, SASE and AI Security",
     description: "Enterprise SASE & AI Security consultant at Palo Alto Networks.",
   },
 };

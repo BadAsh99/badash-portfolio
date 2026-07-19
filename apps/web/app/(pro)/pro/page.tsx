@@ -8,7 +8,7 @@ import { ReportLinks } from "@/components/shared/ReportLinks";
 import { ContactCTA } from "@/components/pro/ContactCTA";
 
 export const metadata: Metadata = {
-  title: "Ash Clements — Enterprise Security Consultant",
+  title: { absolute: "Ash Clements | Sr. Professional Services Consultant, SASE and AI Security" },
 };
 
 export default function ProHomePage() {

@@ -18,7 +18,7 @@ export function HUDProfile({ size = "lg" }: HUDProfileProps) {
       <div className="absolute inset-0 rounded-xl overflow-hidden">
         <Image
           src="/ash-profile.jpeg"
-          alt="Bash99 — AI Security"
+          alt="Bash99, AI Security"
           width={dim}
           height={dim}
           className="object-cover w-full h-full"
@@ -28,22 +28,22 @@ export function HUDProfile({ size = "lg" }: HUDProfileProps) {
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(4,4,14,0.5) 0%, transparent 50%)" }} />
       </div>
 
-      {/* Corner accent — TL */}
+      {/* Corner accent - TL */}
       <svg className="absolute top-0 left-0 w-8 h-8 pointer-events-none" viewBox="0 0 32 32" fill="none">
         <path d="M2 14 L2 2 L14 2" stroke="#0080ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
       </svg>
 
-      {/* Corner accent — TR */}
+      {/* Corner accent - TR */}
       <svg className="absolute top-0 right-0 w-8 h-8 pointer-events-none" viewBox="0 0 32 32" fill="none">
         <path d="M30 14 L30 2 L18 2" stroke="#0080ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
       </svg>
 
-      {/* Corner accent — BL */}
+      {/* Corner accent - BL */}
       <svg className="absolute bottom-0 left-0 w-8 h-8 pointer-events-none" viewBox="0 0 32 32" fill="none">
         <path d="M2 18 L2 30 L14 30" stroke="#0080ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
       </svg>
 
-      {/* Corner accent — BR */}
+      {/* Corner accent - BR */}
       <svg className="absolute bottom-0 right-0 w-8 h-8 pointer-events-none" viewBox="0 0 32 32" fill="none">
         <path d="M30 18 L30 30 L18 30" stroke="#0080ff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
       </svg>

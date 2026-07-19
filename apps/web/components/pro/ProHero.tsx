@@ -23,7 +23,7 @@ export function ProHero() {
             Ash Clements
           </h1>
           <p className="font-sans text-lg text-terminal-muted mb-4">
-            Sr. Professional Services Consultant — SASE & AI Security
+            Sr. Professional Services Consultant, SASE & AI Security
           </p>
 
           <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -39,29 +39,29 @@ export function ProHero() {
           </div>
 
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-4">
-            I got my first job at 15 — waiting tables, helping the family, buying computer parts with what was left.
+            I got my first job at 15: waiting tables, helping the family, buying computer parts with what was left.
             Never stopped working. By my early twenties I was so burned out on tech I got my real estate license
             and made a six-figure income deliberately staying away from computers. Lasted three years before the industry
             hunted me down anyway: brokerages kept asking me to fix their networks, and I was too good at it to say no.
           </p>
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-4">
-            1997 — Unisys fly-and-fix team. We rolled out the Y2K remediation across the entire Social Security
+            1997: Unisys fly-and-fix team. We rolled out the Y2K remediation across the entire Social Security
             Administration. Nearly every state, Thursday to Monday, for two years straight.
             That{"'"}s where carrier-grade infrastructure stopped being theory and became instinct.
           </p>
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-8">
             2001: tech bubble burst, laid off from iDirect post-9/11, back in Richmond with nothing.
-            That year hit hard on multiple fronts. Building something wasn{"'"}t just about the money —
+            That year hit hard on multiple fronts. Building something wasn{"'"}t just about the money:
             it was about having something to show up for every day.
             Downloaded pirated Dreamweaver and Flash, taught myself HTML, CSS, Flash, and Java from scratch,
-            built ProFilesPC from zero — web, security, and network consulting — six figures working from home.
+            built ProFilesPC from zero (web, security, and network consulting), six figures working from home.
             First paycheck went to a legal Adobe license. That{"'"}s still how I operate: figure it out,
             put it back together better, pay it forward when you can.
           </p>
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-8">
             Senior security consultant specializing in enterprise SASE deployments and AI security architecture.
             At Palo Alto Networks, I lead complex Prisma Access implementations for Fortune 500 organizations
-            across critical infrastructure — gas & oil, telecommunications, and global financial services.
+            across critical infrastructure: gas & oil, telecommunications, and global financial services.
             PCNSE certified with deep expertise in Zero Trust architecture and the emerging field of AI runtime security.
           </p>
 

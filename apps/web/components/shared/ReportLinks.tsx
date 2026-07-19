@@ -6,7 +6,7 @@ const resources = [
     items: [
       {
         name: "NCMEC CyberTipline",
-        description: "Report online child sexual exploitation — anonymous submissions accepted",
+        description: "Report online child sexual exploitation, anonymous submissions accepted",
         link: "https://www.cybertipline.org",
         tip: null,
       },
@@ -18,13 +18,13 @@ const resources = [
       },
       {
         name: "Childhelp National Abuse Hotline",
-        description: "24/7 anonymous crisis intervention and reporting — call or text",
+        description: "24/7 anonymous crisis intervention and reporting, call or text",
         link: "https://www.childhelp.org/hotline",
         tip: "1-800-422-4453",
       },
       {
         name: "INHOPE",
-        description: "International anonymous reporting — CSAM, 50+ countries",
+        description: "International anonymous reporting: CSAM, 50+ countries",
         link: "https://www.inhope.org",
         tip: null,
       },
@@ -35,25 +35,25 @@ const resources = [
     items: [
       {
         name: "ASPCA Report Cruelty",
-        description: "How and where to report animal abuse — anonymous tips accepted",
+        description: "How and where to report animal abuse, anonymous tips accepted",
         link: "https://www.aspca.org/take-action/report-animal-cruelty",
         tip: null,
       },
       {
         name: "Humane Society",
-        description: "Report animal cruelty anonymously — national resources and local referrals",
+        description: "Report animal cruelty anonymously, national resources and local referrals",
         link: "https://www.humanesociety.org/resources/report-animal-cruelty",
         tip: null,
       },
       {
         name: "Arizona Humane Society",
-        description: "Report animal cruelty in Arizona — anonymous tips accepted",
+        description: "Report animal cruelty in Arizona, anonymous tips accepted",
         link: "https://www.azhumane.org/report-cruelty",
         tip: "602-997-7585",
       },
       {
         name: "Crime Stoppers",
-        description: "Report animal cruelty anonymously — no name required, potential reward",
+        description: "Report animal cruelty anonymously, no name required, potential reward",
         link: "https://www.crimestoppers.org",
         tip: "1-800-222-8477",
       },
@@ -70,7 +70,7 @@ export function ReportLinks() {
           <span className="font-mono text-red-500 text-sm font-bold tracking-wide uppercase">Report It</span>
         </div>
         <p className="font-mono text-xs text-terminal-muted max-w-2xl leading-relaxed">
-          I spend a lot of time in dark corners of the internet. If you see something — child exploitation, animal cruelty — say something.
+          I spend a lot of time in dark corners of the internet. If you see something (child exploitation, animal cruelty), say something.
           All of these resources accept anonymous reports. You don{"'"}t have to give your name. You just have to make the call.
         </p>
       </div>
@@ -97,7 +97,7 @@ export function ReportLinks() {
                     <div className="flex items-center gap-1.5 mt-1">
                       <Phone size={10} className="text-terminal-green" />
                       <span className="font-mono text-xs text-terminal-green">{item.tip}</span>
-                      <span className="font-mono text-xs text-terminal-dim">— anonymous</span>
+                      <span className="font-mono text-xs text-terminal-dim">(anonymous)</span>
                     </div>
                   )}
                 </div>

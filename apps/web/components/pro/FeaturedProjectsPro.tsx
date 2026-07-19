@@ -5,7 +5,7 @@ const featured = [
   {
     name: "AI Runtime Security Research Platform",
     description:
-      "Multi-agent LLM security framework demonstrating cross-service attack detection and runtime monitoring — the architectural pattern behind Palo Alto Networks' AIRS offering.",
+      "Multi-agent LLM security framework. Cross-service attack detection and runtime monitoring, built to pressure-test the runtime threat models AI security platforms have to defend against.",
     tags: ["AI Security", "FastAPI", "AIRS", "Red Team"],
     github: "https://github.com/BadAsh99/badash-killchain",
     highlight: "5 microservices · real attack chains · audit logging",
@@ -13,7 +13,7 @@ const featured = [
   {
     name: "LLM Vulnerability Assessment Scanner",
     description:
-      "Automated scanner testing AI endpoints against the full OWASP LLM Top 10. Semantic detection catches paraphrased attacks that bypass pattern matching — 35+ payloads, production-ready.",
+      "Automated scanner testing AI endpoints against the full OWASP LLM Top 10. Semantic detection catches paraphrased attacks that bypass pattern matching. 35+ payloads, production-ready.",
     tags: ["OWASP LLM Top 10", "Semantic Detection", "Python"],
     github: "https://github.com/BadAsh99/llmguardt2",
     highlight: "35+ payloads · semantic ML detection · SSE streaming",

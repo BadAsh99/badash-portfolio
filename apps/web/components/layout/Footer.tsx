@@ -10,7 +10,7 @@ export function Footer() {
           <span className="font-mono text-sm text-terminal-muted">
             <span className="text-terminal-green">♊ Ash</span>
             <span className="text-red-500 opacity-75"> C̷̡̛l̸̨͝ȩ̵͘m̷͝͠ȩ̴̛n̵͘͝t̷̡͘s̸͠</span>
-            {" — "}
+            {" · "}
             <span className="opacity-50 tracking-tight">░▒ 0x[̴R̵̢̈́Ě̸D̴̡̾Ā̷C̷̈T̵͒Ě̴D̷̕]̵ ▒░</span>
           </span>
         </div>
@@ -18,7 +18,7 @@ export function Footer() {
           <Link href="/blog" className="hover:text-terminal-green transition-colors">Blog</Link>
         </div>
         <span className="font-mono text-xs text-terminal-dim flex items-center gap-2">
-          {new Date().getFullYear()} — Built with Next.js + Railway
+          {new Date().getFullYear()} · Built with Next.js + Railway
           <a
             href="https://ashclements.dev"
             aria-hidden="true"
