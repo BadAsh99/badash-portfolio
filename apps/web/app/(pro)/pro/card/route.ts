@@ -178,6 +178,8 @@ export function GET() {
         <span class="k">in</span><span class="v">LinkedIn</span><span class="go">open ↗</span></a></li>
       <li><a href="https://ashclements.dev" target="_blank" rel="noopener">
         <span class="k">://</span><span class="v">ashclements.dev</span><span class="go">open ↗</span></a></li>
+      <li><a href="https://github.com/BadAsh99" target="_blank" rel="noopener">
+        <span class="k">gh</span><span class="v">github.com/BadAsh99</span><span class="go">open ↗</span></a></li>
       <li><a href="https://aiseal.ai" target="_blank" rel="noopener">
         <span class="k">◆</span><span class="v">AISeal.ai</span><span class="go">open ↗</span></a></li>
       <li><a href="mailto:ash@ashclements.dev">
@@ -202,6 +204,7 @@ export function GET() {
       "EMAIL;TYPE=INTERNET,WORK:ash@ashclements.dev",
       // "TEL;TYPE=CELL:+1XXXXXXXXXX",   // uncomment to include a phone number
       "URL:https://ashclements.dev",
+      "URL:https://github.com/BadAsh99",
       "URL:https://aiseal.ai",
       "X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/ash-clements-75b62b22/",
       "NOTE:AI Security. Red team + runtime defense. Met at Black Hat / DEF CON 2026.",
