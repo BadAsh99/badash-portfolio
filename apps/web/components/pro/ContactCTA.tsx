@@ -27,7 +27,7 @@ export function ContactCTA() {
           rel="noopener noreferrer"
           className="flex items-center gap-2 font-sans text-sm px-6 py-3 glass-card text-terminal-text rounded hover:text-white transition-colors"
         >
-          GitHub — @BadAsh99 <ExternalLink size={14} />
+          GitHub · @BadAsh99 <ExternalLink size={14} />
         </a>
         <a
           href="https://badash99.dev"

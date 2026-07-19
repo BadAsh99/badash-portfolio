@@ -5,7 +5,7 @@ const causes = [
     name: "St. George's Camp",
     location: "Orkney Springs, VA",
     description:
-      "I grew up going to St. George's Camp because people at my church donated so kids like me could go. Now that I do well, I pay it forward — funding spots for underprivileged kids to have the same experience I did.",
+      "I grew up going to St. George's Camp because people at my church donated so kids like me could go. Now that I do well, I pay it forward, funding spots for underprivileged kids to have the same experience I did.",
     link: "https://www.shrinemont.com",
     linkLabel: "Shrine Mont / St. George's Camp ↗",
   },

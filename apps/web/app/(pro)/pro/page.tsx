@@ -9,6 +9,8 @@ import { ContactCTA } from "@/components/pro/ContactCTA";
 
 export const metadata: Metadata = {
   title: { absolute: "Ash Clements | Sr. Professional Services Consultant, SASE and AI Security" },
+  openGraph: { title: "Ash Clements | Sr. Professional Services Consultant, SASE and AI Security" },
+  twitter: { title: "Ash Clements | Sr. Professional Services Consultant, SASE and AI Security" },
 };
 
 export default function ProHomePage() {
