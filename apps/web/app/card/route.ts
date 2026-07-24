@@ -122,6 +122,7 @@ export function GET() {
   <ul class="links">
     <li><a href="https://badash99.dev" target="_blank" rel="noopener"><span class="k">$</span><span class="v">badash99.dev</span><span class="go">exec ↗</span></a></li>
     <li><a href="https://github.com/BadAsh99" target="_blank" rel="noopener"><span class="k">⌥</span><span class="v">github.com/BadAsh99</span><span class="go">exec ↗</span></a></li>
+    <li><a href="https://app.grayswan.ai/arena/user/6a429ab1b2245b1643a7ffea" target="_blank" rel="noopener"><span class="k">⚔</span><span class="v">Gray Swan · BadAsh99</span><span class="go">exec ↗</span></a></li>
     <li><a href="https://aiseal.ai" target="_blank" rel="noopener"><span class="k">◆</span><span class="v">AISeal.ai</span><span class="go">exec ↗</span></a></li>
   </ul>
 
@@ -133,7 +134,7 @@ export function GET() {
     return ["BEGIN:VCARD","VERSION:3.0","N:Clements;Ash;;;","FN:Ash Clements","NICKNAME:BadAsh99",
       "TITLE:AI Red Team · Offensive Security",
       "EMAIL;TYPE=INTERNET,WORK:ash@ashclements.dev",
-      "URL:https://badash99.dev","URL:https://github.com/BadAsh99","URL:https://aiseal.ai",
+      "URL:https://badash99.dev","URL:https://github.com/BadAsh99","URL:https://app.grayswan.ai/arena/user/6a429ab1b2245b1643a7ffea","URL:https://aiseal.ai",
       "X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/ash-clements-75b62b22/",
       "NOTE:BadAsh99. AI red team + offensive security. Met at DEF CON 2026.","END:VCARD"].join("\r\n");
   }
