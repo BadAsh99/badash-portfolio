@@ -1,10 +1,11 @@
 const schedule = [
+  { name: "OWASP GENAI PROJECT", when: "AUG 4", status: "confirmed" },
   { name: "BLACK HAT USA", when: "AUG 4-9", status: "confirmed" },
+  { name: "OFFENSIVE AI CON", when: "AUG 5", status: "confirmed" },
   { name: "DEF CON", when: "AUG 6-9", status: "confirmed" },
   { name: "AI SECURITY FORUM LV", when: "AUG 6", status: "confirmed" },
-  { name: "OWASP GENAI PROJECT", when: "AUG 4", status: "confirmed" },
-  { name: "OFFENSIVE AI CON", when: "AUG 5", status: "confirmed" },
   { name: "HACKASAN", when: "AUG", status: "confirmed" },
+  { name: "AGE OF AI SUMMIT", when: "AUG 14", status: "confirmed" },
 ];
 
 const DOT_WIDTH = 26;

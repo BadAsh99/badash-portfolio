@@ -16,13 +16,18 @@ const events = [
   },
   {
     name: "OWASP GenAI Security Project",
-    detail: "Networking event",
+    detail: "Networking event, Las Vegas",
     dates: "August 4, 2026",
   },
   {
     name: "AI Risk Summit and CISO Forum",
-    detail: "Half Moon Bay, California",
-    dates: "August 11 to 13, 2026",
+    detail: "SecurityWeek, Ritz-Carlton Half Moon Bay",
+    dates: "August 11 to 12, 2026",
+  },
+  {
+    name: "Age of AI Summit",
+    detail: "Black Hills Information Security",
+    dates: "August 14, 2026",
   },
 ];
 
