@@ -1,0 +1,25 @@
+---
+title: "Red-teaming AI agents at Gray Swan Arena"
+date: "2026-08-03"
+description: "A week inside Gray Swan's Indirect Prompt Injection Challenge, a $20,000 evaluation run with the UK AI Security Institute alongside OpenAI, Anthropic, Google DeepMind, Meta and Amazon. What generalizes, and what stays embargoed until September."
+tags: ["AI Security", "Prompt Injection", "Red Team", "Agent Security"]
+draft: true
+---
+
+Between July 27 and August 2 I competed in Gray Swan's Indirect Prompt Injection Challenge, a $20,000 red-team evaluation run with the UK AI Security Institute alongside OpenAI, Anthropic, Google DeepMind, Meta and Amazon.
+
+My day job is network and cloud security consulting at Palo Alto Networks, on the SASE side, and I should say up front that this was personal research on my own time and my own equipment. Nothing here represents my employer. I mention the overlap only because the two point the same direction. The industry is building runtime security for AI systems right now, and the fastest way to understand what that has to defend against is to spend a week attacking it.
+
+Indirect prompt injection is the attack class that matters most as agents get handed real work. Direct jailbreaking assumes a hostile user typing at a model, which is a threat model most people already have a feel for. Indirect injection assumes an honest user and hostile data, where the payload rides inside something the agent retrieves on its own. A log file, a support ticket, a README, a row in a database. The user never sees it and never approved it, and the agent has no reliable way to separate the instructions it was given from the text it happened to read along the way.
+
+The challenge tested that across tool use, browser use, and coding agents. Picture an agent reading an error log to debug a service, where the log contains text placed there by whoever could write to that field. Everything downstream of that read is a trust decision made with no human in the loop.
+
+I am not going to write about what worked, and that is deliberate rather than coy. Competition rules embargo technique sharing for thirty days after close, which lands around the first of September, and it applies to every participant regardless of where they finished. I would rather publish a shorter post than risk a disqualification, and honestly the embargo is the right policy. This is a live evaluation feeding published defensive research, and leaking method notes mid-window degrades the dataset for everyone who comes after.
+
+What I can say is that most of the week was failure, which is worth stating plainly because the writeups people share afterward tend to skip that part entirely. You spend hours on a target that never moves, and the useful skill turns out to be recognizing when a control sits somewhere your input cannot reach, so you stop spending nights on it and go find one that does not.
+
+What generalizes is this. The failures are almost never a model being tricked into saying something forbidden. They are a model doing something entirely reasonable with information it had no way to verify. That is a systems problem rather than a content-filtering problem, and it gets solved at the action layer instead of the prompt layer. After seventeen years in network and cloud security I keep arriving at the same conclusion from a different direction, which is that you never let any single component be its own last line of defense, because its judgment can always be talked around by someone patient enough. The controls that hold are the boring ones sitting at the action, the data, and the boundary, where intent does not matter because the gate already decided before the request finished arriving.
+
+One footnote worth including. Partway through the run I hit a challenge environment that had not been provisioned correctly, and I reported it to the Gray Swan team rather than quietly working around it. They turned it around quickly. It cost me submissions during a week where submissions were the entire point, and it was still obviously the right call.
+
+More once the window lifts in September. I will be at Black Hat, DEF CON, the Las Vegas AI Security Forum, and the AI Risk Summit at Half Moon Bay through the middle of August, so if you are building or breaking agent systems, come find me and let us talk shop.

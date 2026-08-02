@@ -1,0 +1,26 @@
+---
+title: "Week 8 — Six Days Breaking Agents"
+date: "2026-08-03"
+description: "Gray Swan's indirect prompt injection arena. Twenty thousand on the table, frontier labs on the board, and the good part embargoed until September."
+tags: ["AI Security", "Prompt Injection", "Red Team", "Gray Swan"]
+week: 8
+draft: true
+---
+
+Spent the last week of July trying to get AI agents to do things nobody asked them to do.
+
+Gray Swan runs an arena where the frontier labs put their models up and let people attack them. The July run was indirect prompt injection, twenty thousand dollars on the table, sponsored by the UK AI Security Institute with OpenAI, Anthropic, Google DeepMind, Meta and Amazon all in on it. Three surfaces, tool use, browser use, and coding agents.
+
+Indirect injection is the interesting one. Nobody is typing "ignore your instructions" at anything. The user is a normal person asking for normal help, and the attack is already sitting in a file the agent decides to open by itself. A log line, a note field, a comment in a config. The agent goes looking for context, finds text somebody else wrote, and treats it as part of the world.
+
+That is the whole game. Not persuasion, provenance.
+
+I am not posting technique. The rules say no solution sharing for thirty days after close and I intend to still be eligible in September, so the good part waits. What I will say is that most of the week was me getting nowhere, which is the part nobody screenshots.
+
+The models are not stupid and they are not gullible. They fail in the same place people fail. Information shows up from a source they cannot check, it looks routine, and acting on it feels like doing the job well.
+
+One more thing worth logging. Partway through I hit a challenge environment that was broken and reported it instead of working around it. That cost me submissions in a week where submissions were the whole point. Still the right call, and I would do it again.
+
+Seventeen years in this industry and the oldest attack still works. You do not break the lock. Somebody hands you the key because they thought they were being helpful.
+
+Back at it in August. Black Hat, DEF CON, and wherever the good conversations end up.
