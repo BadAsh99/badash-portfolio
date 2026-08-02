@@ -4,7 +4,7 @@ import { BlogListing } from "@/components/blog/BlogListing";
 
 export const metadata: Metadata = {
   title: "BadAshWednesdays",
-  description: "Weekly series tracking the pivot from manual SASE to agentic AI security workflows.",
+  description: "Build log tracking the pivot from manual SASE to agentic AI security workflows.",
 };
 
 export default function BlogPage() {
@@ -20,7 +20,7 @@ export default function BlogPage() {
             BadAsh<span className="text-terminal-green">Wednesdays</span>
           </h1>
           <p className="text-terminal-muted font-mono text-sm mt-2 max-w-2xl">
-            Weekly log: pivoting from manual SASE ops to agentic AI security workflows. Real builds, real failures, real lessons.
+            Build log: pivoting from manual SASE ops to agentic AI security workflows. Real builds, real failures, real lessons.
           </p>
         </div>
         <BlogListing posts={posts} tags={tags} />

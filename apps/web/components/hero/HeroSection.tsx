@@ -79,7 +79,7 @@ export function HeroSection() {
                 { label: "OWASP LLM", value: "Top 10", sub: "Full coverage" },
                 { label: "Attack Payloads", value: "35+", sub: "Semantic detection" },
                 { label: "Cloud Providers", value: "3", sub: "AWS · Azure · GCP" },
-                { label: "Published", value: "Weekly", sub: "BadAshWednesdays" },
+                { label: "Red Team", value: "Gray Swan", sub: "Arena competitor" },
               ].map((stat) => (
                 <div key={stat.label} className="glass-card rounded p-4">
                   <div className="font-mono text-xl font-bold text-terminal-green">{stat.value}</div>
