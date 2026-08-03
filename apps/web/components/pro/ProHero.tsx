@@ -1,5 +1,4 @@
 import { Award, MapPin, ExternalLink } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 const stats = [
@@ -83,18 +82,9 @@ export function ProHero() {
           </div>
         </div>
 
-        {/* Profile photo */}
-        <div className="flex-shrink-0 flex justify-center md:justify-end">
-          <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-2xl overflow-hidden border border-[#0080ff]/20 shadow-[0_8px_40px_rgba(0,0,0,0.45),0_0_60px_rgba(0,128,255,0.15),0_20px_60px_rgba(0,0,0,0.3)]">
-            <Image
-              src="/profilepic.png"
-              alt="Ash Clements"
-              fill
-              className="object-cover object-top"
-              priority
-            />
-          </div>
-        </div>
+        {/* Profile photo intentionally omitted pending a professional headshot.
+            The previous asset carried badash99 branding, which does not belong
+            on this domain. */}
 
       </div>
 
