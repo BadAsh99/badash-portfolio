@@ -1,8 +1,18 @@
 const events = [
   {
+    name: "OWASP GenAI Security Project",
+    detail: "Networking event, Las Vegas",
+    dates: "August 4, 2026",
+  },
+  {
     name: "Black Hat USA",
     detail: "Las Vegas",
     dates: "August 4 to 9, 2026",
+  },
+  {
+    name: "Offensive AI Con",
+    detail: "Black Hat week networking, Las Vegas",
+    dates: "August 5, 2026",
   },
   {
     name: "DEF CON",
@@ -15,9 +25,9 @@ const events = [
     dates: "August 6, 2026",
   },
   {
-    name: "OWASP GenAI Security Project",
-    detail: "Networking event, Las Vegas",
-    dates: "August 4, 2026",
+    name: "HACKasan",
+    detail: "Pentera, Black Hat week",
+    dates: "August 2026",
   },
   {
     name: "AI Risk Summit and CISO Forum",
