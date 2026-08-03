@@ -6,9 +6,17 @@ const featured = [
     name: "AI Runtime Security Research Platform",
     description:
       "Multi-agent LLM security framework. Cross-service attack detection and runtime monitoring, built to pressure-test the runtime threat models AI security platforms have to defend against.",
-    tags: ["AI Security", "FastAPI", "AIRS", "Red Team"],
+    tags: ["AI Security", "FastAPI", "Agentic Attacks", "Red Team"],
     github: "https://github.com/BadAsh99/badash-killchain",
     highlight: "5 microservices · real attack chains · audit logging",
+  },
+  {
+    name: "AEGIS — AI Pipeline Security",
+    description:
+      "Built for the Protegrity AI Pipeline Security Challenge, a US-only engineering competition for securing AI data pipelines. Focuses on controls at the data and action layer rather than prompt filtering.",
+    tags: ["AI Security", "Data Protection", "Pipeline Security", "Competition"],
+    github: "https://github.com/BadAsh99",
+    highlight: "Registered entrant · built and tested",
   },
   {
     name: "LLM Vulnerability Assessment Scanner",

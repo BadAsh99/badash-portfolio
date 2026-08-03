@@ -194,7 +194,7 @@ export default function AboutPage() {
               I don{"'"}t wait to be assigned. I build.
             </p>
             <p className="text-terminal-muted border-t border-terminal-border pt-4 mt-4">
-              <span className="text-terminal-green">BadAshWednesdays</span> — weekly deep dives on AI security,
+              <span className="text-terminal-green">BadAshWednesdays</span>: deep dives on AI security,
               SASE architecture, and building at the edge of what{"'"}s possible. No fluff. No theory. Just the work.
             </p>
           </div>

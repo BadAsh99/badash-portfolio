@@ -146,7 +146,7 @@ export const experience = [
 
 export const certifications = [
   { name: "PCNSE", full: "Palo Alto Networks Certified Network Security Engineer", issuer: "Palo Alto Networks", year: "2022" },
-  { name: "AIRS", full: "AI Runtime Security Specialist (in progress)", issuer: "Palo Alto Networks", year: "2025" },
+  { name: "CISSP", full: "Certified Information Systems Security Professional (candidate)", issuer: "ISC2", year: "2026" },
 ];
 
 export const domains = [
@@ -156,7 +156,7 @@ export const domains = [
   },
   {
     name: "AI Security",
-    items: ["OWASP LLM Top 10", "Prompt Injection", "AIRS", "LLM Red Teaming", "AI Runtime Security", "Semantic Detection"],
+    items: ["OWASP LLM Top 10", "Prompt Injection", "Indirect Prompt Injection", "LLM Red Teaming", "AI Runtime Security", "Agentic Tool-Use Security", "Semantic Detection"],
   },
   {
     name: "Cloud Security",
