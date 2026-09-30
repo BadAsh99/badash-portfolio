@@ -6,7 +6,7 @@ import { ReportLinks } from "@/components/shared/ReportLinks";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Bash99 — SASE, SaaS & AI Security. PCNSE certified. Securing enterprise infrastructure for gas & oil, telecom, and Fortune 500.",
+  description: "BadAsh99 — SASE, SaaS & AI Security. PCNSE certified. Securing enterprise infrastructure for gas & oil, telecom, and Fortune 500.",
 };
 
 const domains = [
@@ -70,7 +70,7 @@ export default function AboutPage() {
           <div className="flex-1 min-w-0">
             <div className="font-mono text-terminal-green text-sm mb-3">{"// IDENTITY.TXT"}</div>
             <h1 className="text-4xl md:text-5xl font-bold font-mono text-terminal-text leading-tight">
-              <span className="text-terminal-green">Bash99</span>
+              <span className="text-terminal-green">BadAsh99</span>
             </h1>
             <div className="font-mono text-terminal-cyan text-base mt-2">
               SASE & AI Security · SaaS · Builder

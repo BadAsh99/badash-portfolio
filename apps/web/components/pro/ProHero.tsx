@@ -1,4 +1,4 @@
-import { Award, MapPin, ExternalLink } from "lucide-react";
+import { Award, MapPin, ExternalLink, FileText } from "lucide-react";
 import Link from "next/link";
 
 const stats = [
@@ -38,30 +38,23 @@ export function ProHero() {
           </div>
 
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-4">
-            I got my first job at 15: waiting tables, helping the family, buying computer parts with what was left.
-            Never stopped working. By my early twenties I was so burned out on tech I got my real estate license
-            and made a six-figure income deliberately staying away from computers. Lasted three years before the industry
-            hunted me down anyway: brokerages kept asking me to fix their networks, and I was too good at it to say no.
+            Seventeen years in enterprise security, nine of them at Palo Alto Networks, where I lead complex
+            Prisma Access implementations for Fortune 500 organizations across critical infrastructure:
+            gas & oil, telecommunications, and global financial services. I own the identity layer on those
+            engagements, validate public exploits and their variants almost daily, and sit in customer breach
+            and zero-day response. PCNSE certified, with deep expertise in Zero Trust architecture.
           </p>
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-4">
-            1997: Unisys fly-and-fix team. We rolled out the Y2K remediation across the entire Social Security
-            Administration. Nearly every state, Thursday to Monday, for two years straight.
-            That{"'"}s where carrier-grade infrastructure stopped being theory and became instinct.
+            For the past year I have also red-teamed production language models in Gray Swan{"'"}s
+            frontier-lab-funded arena, where placements pay and the top finishers are recruited for private
+            engagements. The defensive side of that work was graded too: AEGIS, a RAG pipeline that tokenizes
+            personal data on ingest so a successful prompt injection walks away with tokens instead of people,
+            placed second in Protegrity{"'"}s 2026 AI Pipeline Security Challenge.
           </p>
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-8">
-            2001: tech bubble burst, laid off from iDirect post-9/11, back in Richmond with nothing.
-            That year hit hard on multiple fronts. Building something wasn{"'"}t just about the money:
-            it was about having something to show up for every day.
-            Downloaded pirated Dreamweaver and Flash, taught myself HTML, CSS, Flash, and Java from scratch,
-            built ProFilesPC from zero (web, security, and network consulting), six figures working from home.
-            First paycheck went to a legal Adobe license. That{"'"}s still how I operate: figure it out,
-            put it back together better, pay it forward when you can.
-          </p>
-          <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-8">
-            Senior security consultant specializing in enterprise SASE deployments and AI security architecture.
-            At Palo Alto Networks, I lead complex Prisma Access implementations for Fortune 500 organizations
-            across critical infrastructure: gas & oil, telecommunications, and global financial services.
-            PCNSE certified with deep expertise in Zero Trust architecture and the emerging field of AI runtime security.
+            The conclusion I keep landing on is the one I reached about networks a decade ago. No single
+            component can be its own last line of defense, because its judgment can always be talked around by
+            someone patient enough. The controls that hold sit at the action, the data, and the boundary.
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -72,6 +65,14 @@ export function ProHero() {
               className="flex items-center gap-2 font-sans text-sm font-medium px-5 py-2.5 bg-[#0080ff] text-white rounded hover:bg-[#0066cc] transition-colors"
             >
               LinkedIn Profile <ExternalLink size={14} />
+            </a>
+            <a
+              href="/Ash_Clements_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 font-sans text-sm px-5 py-2.5 glass-card text-terminal-text rounded hover:text-white transition-colors"
+            >
+              <FileText size={14} /> Resume (PDF)
             </a>
             <Link
               href="/pro/experience"

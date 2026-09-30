@@ -1,28 +1,41 @@
 export const experience = [
   {
-    role: "Sr. Professional Services Consultant",
+    role: "Sr. Professional Services Consultant, SASE",
     company: "Palo Alto Networks",
-    period: "June 2017 - Present",
+    period: "2021 - Present",
     location: "Phoenix, AZ",
     focus: "SASE & AI Security · Enterprise Architecture · Professional Services",
     highlights: [
       "Lead complex Prisma Access (SASE) implementations for Fortune 500 organizations across oil & gas, telecom, and global financial services",
       "Architect Zero Trust network security for high-stakes enterprise environments: critical infrastructure, carrier-grade, global finance",
-      "PCNSE certified with deep expertise in PAN-OS, GlobalProtect, SD-WAN, and Prisma Access",
-      "Building AI runtime security tooling in parallel (LLMGuardT2, Ghost99OC, red-team attack chains) to pressure-test AI runtime threat models firsthand",
+      "Ran proof-of-value work on Prisma AIRS, the AI runtime security platform, and built SCMReady, internal pre-cutover tooling for Panorama to Strata Cloud Manager migrations that two customers deployed after their own security teams approved it",
+      "Red-team production language models in Gray Swan's frontier-lab-funded arena, and built AEGIS, a zero-exposure RAG pipeline that placed second in Protegrity's 2026 AI Pipeline Security Challenge",
     ],
     current: true,
   },
   {
+    role: "Sr. Technical Support Engineer, SASE",
+    company: "Palo Alto Networks",
+    period: "June 2017 - 2021",
+    location: "Phoenix, AZ",
+    focus: "Prisma Access escalations · Lab reproduction · Knowledge base",
+    highlights: [
+      "Owned the hardest Prisma Access escalations, reproduced them in the lab and handed engineering the repro; several became shipped bug fixes",
+      "Wrote the internal KBs and customer-facing troubleshooting guides that came out of those escalations",
+      "Promoted to Sr. Professional Services Consultant in 2021",
+    ],
+    current: false,
+  },
+  {
     role: "Network Security Engineer",
     company: "American Express",
-    period: "March 2016 - April 2017",
+    period: "February 2016 - May 2017",
     location: "Phoenix, AZ",
     focus: "Enterprise firewall policy · Network segmentation · PCI-DSS",
     highlights: [
-      "Enterprise firewall policy, network segmentation, and security infrastructure for one of the world's largest payment networks",
+      "Migrated enterprise data center firewalls from legacy Cisco ASA to Palo Alto NGFW with automated rule conversion and validation",
       "Operated in a highly regulated PCI-DSS environment with direct exposure to financial-grade security standards",
-      "Secured global financial transaction infrastructure at enterprise scale",
+      "Ran the HA clusters under continuous compliance in production and non-production",
     ],
     current: false,
   },
@@ -76,6 +89,12 @@ export const experience = [
     ],
     current: false,
   },
+];
+
+// Pre-2009 history. Preserved here, not rendered on the professional timeline,
+// which matches the seventeen-year window the resume uses. The full story lives
+// on the badash99.dev about page.
+export const earlyExperience = [
   {
     role: "Founder / Owner",
     company: "ProFilesPC",
@@ -145,7 +164,7 @@ export const experience = [
 ];
 
 export const certifications = [
-  { name: "PCNSE", full: "Palo Alto Networks Certified Network Security Engineer", issuer: "Palo Alto Networks", year: "2022" },
+  { name: "PCNSE", full: "Palo Alto Networks Certified Network Security Engineer", issuer: "Palo Alto Networks", year: "2024" },
   { name: "CISSP", full: "Certified Information Systems Security Professional (candidate)", issuer: "ISC2", year: "2026" },
 ];
 

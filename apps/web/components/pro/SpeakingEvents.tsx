@@ -47,13 +47,13 @@ export function SpeakingEvents() {
       <div className="max-w-5xl mx-auto">
         <div className="mb-10">
           <div className="font-sans text-sm uppercase tracking-widest text-[#0080ff] mb-2">
-            Where I&apos;ll Be
+            Where I&apos;ve Been
           </div>
-          <h2 className="text-3xl font-bold">August 2026</h2>
+          <h2 className="text-3xl font-bold">The 2026 conference circuit</h2>
           <p className="text-muted-foreground mt-3 max-w-2xl">
-            Attending the AI security track across Black Hat, DEF CON, and the AI Risk Summit. If
-            you are working on runtime security for AI systems and want to talk shop, find me at
-            any of these.
+            Worked the AI security track across Black Hat, DEF CON, and the AI Risk Summit in August 2026,
+            self-funded. If you are building or breaking AI systems and we crossed paths at any of these,
+            the contact form below reaches me.
           </p>
         </div>
 

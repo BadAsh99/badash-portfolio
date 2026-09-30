@@ -10,14 +10,14 @@ export const metadata: Metadata = {
     template: "%s | BadAsh Security Lab",
   },
   description:
-    "AI security playground, OWASP LLM Top 10 scanner, and tools by Bash99 — SASE, SaaS security, and AI runtime security.",
+    "AI security playground, OWASP LLM Top 10 scanner, and tools by BadAsh99. SASE, SaaS security, and AI runtime security.",
   keywords: ["AI Security", "LLM Security", "OWASP", "Prompt Injection", "SASE", "SaaS Security", "Red Team"],
-  authors: [{ name: "Bash99" }],
+  authors: [{ name: "BadAsh99" }],
   openGraph: {
     type: "website",
     siteName: "BadAsh Security Lab",
     title: "BadAsh Security Lab",
-    description: "Live AI security playground + OWASP LLM Top 10 scanner by Bash99",
+    description: "Live AI security playground + OWASP LLM Top 10 scanner by BadAsh99",
   },
   twitter: {
     card: "summary_large_image",
