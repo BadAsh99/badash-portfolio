@@ -13,7 +13,7 @@ const featured = [
   {
     name: "AEGIS · Zero-Exposure RAG",
     description:
-      "Second place, Protegrity 2026 AI Pipeline Security Challenge. Personal data is tokenized on ingest and stays tokenized through embedding, the vector store and inference, so a successful prompt injection walks away with tokens instead of people. Plaintext re-identified 100 percent of records on real embeddings; AEGIS re-identified none.",
+      "Second place, Protegrity 2026 AI Pipeline Security Challenge. Personal data is tokenized on ingest and stays tokenized through embedding, the vector store and inference, so a successful prompt injection walks away with tokens instead of personal data. Plaintext re-identified 100 percent of records on real embeddings; AEGIS re-identified none.",
     tags: ["AI Security", "Data Protection", "RAG", "Protegrity", "Competition"],
     github: "https://github.com/BadAsh99/aegis-rag",
     highlight: "2nd place · 0% re-identification · scope-bound reveal · hash-chained ledger",

@@ -48,7 +48,7 @@ export function ProHero() {
             For the past year I have also red-teamed production language models in Gray Swan{"'"}s
             frontier-lab-funded arena, where placements pay and the top finishers are recruited for private
             engagements. The defensive side of that work was graded too: AEGIS, a RAG pipeline that tokenizes
-            personal data on ingest so a successful prompt injection walks away with tokens instead of people,
+            personal data on ingest so a successful prompt injection walks away with tokens instead of personal data,
             placed second in Protegrity{"'"}s 2026 AI Pipeline Security Challenge.
           </p>
           <p className="font-sans text-sm text-terminal-muted leading-relaxed max-w-xl mb-8">
