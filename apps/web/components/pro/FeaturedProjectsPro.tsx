@@ -3,20 +3,20 @@ import Link from "next/link";
 
 const featured = [
   {
-    name: "AI Runtime Security Research Platform",
-    description:
-      "Multi-agent LLM security framework. Cross-service attack detection and runtime monitoring, built to pressure-test the runtime threat models AI security platforms have to defend against.",
-    tags: ["AI Security", "FastAPI", "Agentic Attacks", "Red Team"],
-    github: "https://github.com/BadAsh99/badash-killchain",
-    highlight: "5 microservices · real attack chains · audit logging",
-  },
-  {
     name: "AEGIS · Zero-Exposure RAG",
     description:
       "Second place, Protegrity 2026 AI Pipeline Security Challenge. Personal data is tokenized on ingest and stays tokenized through embedding, the vector store and inference, so a successful prompt injection walks away with tokens instead of personal data. Plaintext re-identified 100 percent of records on real embeddings; AEGIS re-identified none.",
     tags: ["AI Security", "Data Protection", "RAG", "Protegrity", "Competition"],
     github: "https://github.com/BadAsh99/aegis-rag",
     highlight: "2nd place · 0% re-identification · scope-bound reveal · hash-chained ledger",
+  },
+  {
+    name: "AI Runtime Security Research Platform",
+    description:
+      "Multi-agent LLM security framework. Cross-service attack detection and runtime monitoring, built to pressure-test the runtime threat models AI security platforms have to defend against.",
+    tags: ["AI Security", "FastAPI", "Agentic Attacks", "Red Team"],
+    github: "https://github.com/BadAsh99/badash-killchain",
+    highlight: "5 microservices · real attack chains · audit logging",
   },
   {
     name: "LLM Vulnerability Assessment Scanner",

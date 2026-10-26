@@ -8,7 +8,7 @@ export const experience = [
     highlights: [
       "Lead complex Prisma Access (SASE) implementations for Fortune 500 organizations across oil & gas, telecom, and global financial services",
       "Architect Zero Trust network security for high-stakes enterprise environments: critical infrastructure, carrier-grade, global finance",
-      "Ran proof-of-value work on Prisma AIRS, the AI runtime security platform, and built SCMReady, internal pre-cutover tooling for Panorama to Strata Cloud Manager migrations that two customers deployed after their own security teams approved it",
+      "Ran structured red-team exercises on a personal Prisma AIRS lab tenant (prompt injection, tool-use abuse, agent behaviors), and built SCMReady, a read-only parity checker for Panorama to Strata Cloud Manager migrations that was adopted internally, presented to principal and staff engineers, and requested by a Palo Alto Networks Unit 42 engineer for a customer migration",
       "Red-team production language models in Gray Swan's frontier-lab-funded arena, and built AEGIS, a zero-exposure RAG pipeline that placed second in Protegrity's 2026 AI Pipeline Security Challenge",
     ],
     current: true,
@@ -28,7 +28,7 @@ export const experience = [
   },
   {
     role: "Network Security Engineer",
-    company: "American Express",
+    company: "American Express (contract via ConsultNet LLC)",
     period: "February 2016 - May 2017",
     location: "Phoenix, AZ",
     focus: "Enterprise firewall policy · Network segmentation · PCI-DSS",
@@ -40,52 +40,27 @@ export const experience = [
     current: false,
   },
   {
-    role: "Manager, Channel Development",
+    role: "Channel Development Manager",
     company: "Allied Telecom Group",
-    period: "2015 - 2016",
-    location: "Nationwide",
-    focus: "Telecom infrastructure · Channel partner relationships · Business development",
+    period: "2013 - 2015",
+    location: "Arlington, VA",
+    focus: "Enterprise renewal portfolio · Network-infrastructure contracts · Technical escalation",
     highlights: [
-      "Channel partner relationships and business development for a regional telecom provider",
-      "Leveraged deep network engineering background to bridge technical and commercial conversations",
+      "Managed an enterprise renewal portfolio and served as senior technical escalation point for complex network-infrastructure contracts across the DMV region",
+      "Leveraged a deep network engineering background to bridge technical and commercial conversations",
     ],
     current: false,
   },
   {
-    role: "Sr. Network Security Engineer",
-    company: "Independent Network Consultants (INC)",
-    period: "2012 - 2015",
-    location: "Nationwide",
-    focus: "MSP · Enterprise network architecture · Security hardening · VPN architecture",
+    role: "IT and Network Consultant",
+    company: "Independent Network Development Inc",
+    period: "2010 - 2013",
+    location: "Westminster, MD",
+    focus: "Managed service provider · Network & security infrastructure · Team build-out",
     highlights: [
-      "Senior network security engineering at a dedicated MSP serving enterprise clients nationwide",
-      "Enterprise network architecture, security hardening, firewall design, and VPN architecture",
-      "Deepened the enterprise consulting skillset that feeds directly into current PAN work",
-    ],
-    current: false,
-  },
-  {
-    role: "Sr. Network Security Engineer (Contractor)",
-    company: "FDA",
-    period: "2010 - 2012",
-    location: "Washington, D.C.",
-    focus: "Federal network security · Government infrastructure · Data center operations",
-    highlights: [
-      "Federal contractor given a dedicated office, rare for a contractor at the agency",
-      "Spent the majority of time in the data center; deep hands-on federal infrastructure work",
-      "Led unplanned DC recovery after a visitor hit the emergency power shutoff; had the data center back online in under 30 minutes",
-    ],
-    current: false,
-  },
-  {
-    role: "Network Technician",
-    company: "Cavalier Telephone",
-    period: "2009 - 2010",
-    location: "Richmond, VA",
-    focus: "ISP / CLEC operations · Carrier networking · Network engineering",
-    highlights: [
-      "Carrier-grade networking at a regional CLEC, where enterprise networking fundamentals got built",
-      "Earned CCNA certification during this role",
+      "Delivered network and security infrastructure for enterprise clients: firewall and VPN deployment, device hardening, vulnerability assessment, and remediation",
+      "Tasked by the owner to build out a specialized consulting team: hired and mentored engineers, including one who went on to earn CISSP and CISM and serve as an interim CISO",
+      "Deepened the enterprise consulting skillset that feeds directly into current Palo Alto Networks work",
     ],
     current: false,
   },
@@ -165,7 +140,7 @@ export const earlyExperience = [
 
 export const certifications = [
   { name: "PCNSE", full: "Palo Alto Networks Certified Network Security Engineer", issuer: "Palo Alto Networks", year: "2024" },
-  { name: "CISSP", full: "Certified Information Systems Security Professional (candidate)", issuer: "ISC2", year: "2026" },
+  { name: "HTB COAE", full: "Certified Offensive AI Expert (in progress)", issuer: "Hack The Box", year: "2026" },
 ];
 
 export const domains = [

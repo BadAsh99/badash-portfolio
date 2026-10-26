@@ -7,18 +7,18 @@ import { ProBackdoor } from "@/components/pro/ProBackdoor";
 
 export const metadata: Metadata = {
   title: {
-    default: "Ash Clements | Sr. Professional Services Consultant, SASE and AI Security",
+    default: "Ash Clements | AI Red Teamer & Security Engineer",
     template: "%s | Ash Clements",
   },
   description:
-    "Sr. Professional Services Consultant at Palo Alto Networks. PCNSE certified. Securing Fortune 500, gas & oil, and telecom enterprises with Prisma Access and Zero Trust architecture.",
-  keywords: ["Palo Alto Networks", "PCNSE", "SASE", "Prisma Access", "Zero Trust", "AI Security", "Professional Services"],
+    "AI red teamer and security engineer. Gray Swan Winner's Circle, #26/282 in Breaking Ties, 183 Hazard Hunt cyber breaks across 47 frontier models. Builder of AEGIS. Seventeen years in enterprise security, PCNSE certified.",
+  keywords: ["AI Red Team", "AI Security", "LLM Security", "Prompt Injection", "Agent Security", "Threat Hunting", "Gray Swan", "Palo Alto Networks", "PCNSE", "Zero Trust"],
   authors: [{ name: "Ash Clements" }],
   openGraph: {
     type: "profile",
     siteName: "Ash Clements",
-    title: "Ash Clements | Sr. Professional Services Consultant, SASE and AI Security",
-    description: "Enterprise SASE & AI Security consultant at Palo Alto Networks.",
+    title: "Ash Clements | AI Red Teamer & Security Engineer",
+    description: "AI red teamer and security engineer. Gray Swan Winner's Circle. Builder of AEGIS. Seventeen years in enterprise security.",
   },
 };
 

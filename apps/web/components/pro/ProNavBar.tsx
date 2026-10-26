@@ -40,7 +40,7 @@ export function ProNavBar() {
             Ash Clements
           </span>
           <span className="font-sans text-xs text-terminal-muted tracking-wide">
-            Palo Alto Networks · PCNSE
+            AI Red Teamer · Security Engineer
           </span>
         </Link>
 
