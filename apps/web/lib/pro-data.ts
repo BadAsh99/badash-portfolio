@@ -52,8 +52,8 @@ export const experience = [
     current: false,
   },
   {
-    role: "IT and Network Consultant",
-    company: "Independent Network Development Inc",
+    role: "Network Security Consultant",
+    company: "Independent Network Consultants",
     period: "2010 - 2013",
     location: "Westminster, MD",
     focus: "Managed service provider · Network & security infrastructure · Team build-out",
